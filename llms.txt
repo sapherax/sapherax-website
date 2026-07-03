@@ -1,19 +1,28 @@
 # SapheraX Systems GmbH
 
-> KEENON-Systempartner fuer Servicerobotik, Reinigungsrobotik und Transportrobotik in Rheinland-Pfalz, Hessen und Nordrhein-Westfalen. Zielgruppen: Gastronomie, Hotellerie, Handel und Pflege. Showroom an der A3 zwischen Koeln und Frankfurt.
+> KEENON-Systempartner für Servicerobotik, Reinigungsrobotik und Transportrobotik in Rheinland-Pfalz, Hessen und Nordrhein-Westfalen. Zielgruppen: Gastronomie, Hotellerie, Handel und Pflege. Showroom an der A3 zwischen Köln und Frankfurt.
 
 ## Seiten
 
-- [Startseite](https://www.sapherax.com/): Ueberblick ueber Leistungen und Positionierung
-- [Einsatzbereiche](https://www.sapherax.com/einsatzbereiche-1/): Uebersicht aller Branchen
+- [Startseite](https://www.sapherax.com/): Überblick über Leistungen und Positionierung
+- [Einsatzbereiche](https://www.sapherax.com/einsatzbereiche-1/): Übersicht aller Branchen
   - [Gastronomie](https://www.sapherax.com/einsatzbereiche-1/gastronomie/)
   - [Hotellerie](https://www.sapherax.com/einsatzbereiche-1/hotellerie/)
   - [Handel](https://www.sapherax.com/einsatzbereiche-1/handel/)
   - [Pflege](https://www.sapherax.com/einsatzbereiche-1/pflege/)
   - [Reinigung](https://www.sapherax.com/einsatzbereiche-1/reinigung/)
-- [Systeme & Loesungen](https://www.sapherax.com/systeme-and-loesungen/): KEENON-Produktuebersicht
+- [Systeme & Lösungen](https://www.sapherax.com/systeme-and-loesungen/): KEENON-Produktübersicht
   - [DINERBOT T10](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t10/)
+  - [DINERBOT T11](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t11/)
+  - [DINERBOT T9](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t9/)
+  - [DINERBOT T9 Pro](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t9-pro/)
+  - [BUTLERBOT W3](https://www.sapherax.com/systeme-and-loesungen/butlerbot-w3/)
+  - [KLEENBOT C30](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c30/)
+  - [KLEENBOT C40](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c40/)
+  - [Transportroboter S100](https://www.sapherax.com/systeme-and-loesungen/transportroboter-s100/)
+  - [Transportroboter S300](https://www.sapherax.com/systeme-and-loesungen/transportroboter-s300/)
+- [Praxisvideos](https://www.sapherax.com/videos/): Produktvideos und Praxisbeispiele je System
 - [Service](https://www.sapherax.com/service/): Ablauf von Beratung bis Support
-- [Unternehmen](https://www.sapherax.com/unternehmen/): Ueber SapheraX
-- [FAQ](https://www.sapherax.com/faq/): Haeufige Fragen zu Robotik, Kosten und Integration
+- [Unternehmen](https://www.sapherax.com/unternehmen/): Über SapheraX
+- [FAQ](https://www.sapherax.com/faq/): Häufige Fragen zu Robotik, Kosten und Integration
 - [Kontakt](https://www.sapherax.com/kontakt/): Kontaktformular und Beratungstermine
