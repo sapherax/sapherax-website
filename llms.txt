@@ -1,0 +1,19 @@
+# SapheraX Systems GmbH
+
+> KEENON-Systempartner fuer Servicerobotik, Reinigungsrobotik und Transportrobotik in Rheinland-Pfalz, Hessen und Nordrhein-Westfalen. Zielgruppen: Gastronomie, Hotellerie, Handel und Pflege. Showroom an der A3 zwischen Koeln und Frankfurt.
+
+## Seiten
+
+- [Startseite](https://www.sapherax.com/): Ueberblick ueber Leistungen und Positionierung
+- [Einsatzbereiche](https://www.sapherax.com/einsatzbereiche-1/): Uebersicht aller Branchen
+  - [Gastronomie](https://www.sapherax.com/einsatzbereiche-1/gastronomie/)
+  - [Hotellerie](https://www.sapherax.com/einsatzbereiche-1/hotellerie/)
+  - [Handel](https://www.sapherax.com/einsatzbereiche-1/handel/)
+  - [Pflege](https://www.sapherax.com/einsatzbereiche-1/pflege/)
+  - [Reinigung](https://www.sapherax.com/einsatzbereiche-1/reinigung/)
+- [Systeme & Loesungen](https://www.sapherax.com/systeme-and-loesungen/): KEENON-Produktuebersicht
+  - [DINERBOT T10](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t10/)
+- [Service](https://www.sapherax.com/service/): Ablauf von Beratung bis Support
+- [Unternehmen](https://www.sapherax.com/unternehmen/): Ueber SapheraX
+- [FAQ](https://www.sapherax.com/faq/): Haeufige Fragen zu Robotik, Kosten und Integration
+- [Kontakt](https://www.sapherax.com/kontakt/): Kontaktformular und Beratungstermine
