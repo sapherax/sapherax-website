@@ -9,7 +9,7 @@ Neuer Seitenaufbau, ersetzt schrittweise die IONOS-Baukasten-Seite. URLs sind id
 * Neu: /faq/ mit FAQPage-Structured-Data
 * Jede Seite hat Meta-Description, kanonische URL und passende JSON-LD-Daten (Organization, Service, Product oder FAQPage) fuer bessere Lesbarkeit durch Suchmaschinen und KI-Systeme
 * robots.txt erlaubt explizit gaengige KI-Crawler (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)
-* llms.txt fasst die Seitenstruktur fuer KI-Systeme zusammen
+* llms.txt fasst die Seitenstruktur fuer KI-Systeme zusammen.
 * sitemap.xml listet alle Seiten.
 
 ## Assets - wo liegt was
