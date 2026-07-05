@@ -84,9 +84,35 @@
     }
   }
 
+  // Mobile nav: submenus (Einsatzbereiche, Systeme & Lösungen) are collapsed
+  // by default on small screens and opened via a small toggle button, so the
+  // parent link still navigates normally while the submenu stays tucked away
+  // until the visitor asks for it.
+  function initMobileSubmenus() {
+    var groups = document.querySelectorAll("nav.main .has-submenu");
+    for (var i = 0; i < groups.length; i++) {
+      (function (group) {
+        var submenu = group.querySelector(".submenu");
+        if (!submenu || group.querySelector(".submenu-toggle")) return;
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "submenu-toggle";
+        btn.setAttribute("aria-label", "Untermenü ein-/ausklappen");
+        submenu.insertAdjacentElement("beforebegin", btn);
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          group.classList.toggle("open");
+        });
+      })(groups[i]);
+    }
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", initMobileSubmenus);
   } else {
     init();
+    initMobileSubmenus();
   }
 })();

@@ -39,6 +39,40 @@
           })(i);
         }
 
+        // Swipe support for touch devices: a quick left/right swipe on the
+        // large image jumps straight to the next/previous picture instead of
+        // waiting for the auto-rotate timer.
+        var mainWrap = gallery.querySelector(".gallery-main");
+        if (mainWrap) {
+          var touchStartX = 0;
+          var touchStartY = 0;
+          var touching = false;
+
+          mainWrap.addEventListener("touchstart", function (e) {
+            if (e.touches.length !== 1) return;
+            touching = true;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+          }, { passive: true });
+
+          mainWrap.addEventListener("touchend", function (e) {
+            if (!touching) return;
+            touching = false;
+            var touch = e.changedTouches[0];
+            var dx = touch.clientX - touchStartX;
+            var dy = touch.clientY - touchStartY;
+            var THRESHOLD = 30;
+            if (Math.abs(dx) > THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+              if (dx < 0) {
+                show((idx + 1) % thumbs.length);
+              } else {
+                show((idx - 1 + thumbs.length) % thumbs.length);
+              }
+              resetTimer();
+            }
+          }, { passive: true });
+        }
+
         resetTimer();
       })(galleries[g]);
     }
