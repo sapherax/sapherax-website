@@ -9,19 +9,6 @@
     try { localStorage.setItem(KEY, val); } catch (e) {}
   }
 
-  function loadGoogleFonts() {
-    if (document.getElementById("sx-gfonts")) return;
-    var pre = document.createElement("link");
-    pre.rel = "preconnect";
-    pre.href = "https://fonts.googleapis.com";
-    var css = document.createElement("link");
-    css.id = "sx-gfonts";
-    css.rel = "stylesheet";
-    css.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";
-    document.head.appendChild(pre);
-    document.head.appendChild(css);
-  }
-
   // Videos never start on their own. They only load and play once the
   // visitor explicitly clicks the preview/play button for that specific
   // video. Since there is no German audio track yet, playback then starts
@@ -58,13 +45,12 @@
     if (b) b.style.display = "flex";
   }
 
-  // Accepting only unlocks Google Fonts and marks external content as
-  // generally allowed. It must NOT start any video playback by itself -
-  // videos are always started individually, by clicking their own preview.
+  // Accepting only marks external content (YouTube) as generally allowed.
+  // It must NOT start any video playback by itself - videos are always
+  // started individually, by clicking their own preview.
   function accept() {
     setConsent("granted");
     hideBanner();
-    loadGoogleFonts();
   }
   function decline() {
     setConsent("denied");
@@ -73,9 +59,7 @@
 
   function init() {
     var state = getConsent();
-    if (state === "granted") {
-      loadGoogleFonts();
-    } else if (state !== "denied") {
+    if (state !== "granted" && state !== "denied") {
       showBanner();
     }
 
