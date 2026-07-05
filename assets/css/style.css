@@ -30,7 +30,7 @@ header.site .wrap { display: flex; align-items: center; justify-content: space-b
 .logo { font-size: 20px; font-weight: 600; color: var(--accent-dark); letter-spacing: 0.2px; }
 .logo-mark { display: flex; align-items: center; gap: 10px; }
 .logo-mark .logo-icon { width: 38px; height: 38px; border-radius: 22%; display: block; flex-shrink: 0; }
-.logo-mark .logo-word { height: 19px; width: auto; display: block; }
+.logo-mark .logo-word { height: 53px; width: auto; display: block; }
 footer .logo-mark .logo-word { display: none; }
 footer .logo-mark .logo-text { color: #fff; font-size: 18px; font-weight: 600; }
 nav.main { display: flex; gap: 24px; }
@@ -69,6 +69,7 @@ p.section-lead.center { margin-left: auto; margin-right: auto; text-align: cente
 .card h3 { font-size: 17px; font-weight: 600; margin: 0 0 10px; color: var(--text-primary); }
 .card p { font-size: 14px; color: var(--text-secondary); margin: 0; }
 .card img { margin-bottom: 16px; height: 180px; width: 100%; object-fit: cover; }
+.card:hover { border-color: var(--accent); }
 .product-card .tag { display: inline-block; background: var(--accent-tint); color: var(--accent-dark); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 100px; margin-bottom: 12px; }
 .check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
 .check-list li { display: flex; gap: 12px; font-size: 15px; color: var(--text-secondary); }
@@ -110,6 +111,14 @@ footer.site .legal { border-top: 1px solid #24405f; margin-top: 28px; padding-to
 .consent-banner-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .consent-banner .btn-secondary { background: transparent; color: #fff; border: 1px solid #fff; }
 .consent-banner .btn-secondary:hover { background: rgba(255,255,255,.12); }
+.product-gallery { max-width: 720px; }
+.gallery-main { border-radius: var(--radius); overflow: hidden; background: #0B1524; }
+.gallery-main img { width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius); }
+.gallery-thumbs { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+.gallery-thumbs img { width: 76px; height: 76px; object-fit: cover; border-radius: 8px; cursor: pointer; opacity: .55; border: 2px solid transparent; transition: opacity .2s, border-color .2s; margin: 0; }
+.gallery-thumbs img:hover { opacity: .85; }
+.gallery-thumbs img.active { opacity: 1; border-color: var(--accent); }
+.download-list { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
 @media (max-width: 900px) {
   .hero-bg { padding: 64px 0; }
   .consent-banner-inner { flex-direction: column; align-items: stretch; text-align: left; }
@@ -119,6 +128,7 @@ footer.site .legal { border-top: 1px solid #24405f; margin-top: 28px; padding-to
   .steps { grid-template-columns: 1fr 1fr; }
   .hero h1 { font-size: 30px; }
   .hero-image img { height: 240px; }
+  .gallery-main img { height: 260px; }
   .nav-toggle { display: block; }
   nav.main {
     display: none;

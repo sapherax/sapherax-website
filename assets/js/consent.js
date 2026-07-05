@@ -22,13 +22,18 @@
     document.head.appendChild(css);
   }
 
+  // Videos never start on their own. They only load and play once the
+  // visitor explicitly clicks the preview/play button for that specific
+  // video. Since there is no German audio track yet, playback then starts
+  // muted by default so nothing suddenly plays with sound; the visitor can
+  // unmute via the YouTube player controls.
   function activateVideo(el) {
     if (!el || el.dataset.activated) return;
     el.dataset.activated = "1";
     var id = el.getAttribute("data-yt-id");
     var title = el.getAttribute("data-yt-title") || "YouTube-Video";
     var iframe = document.createElement("iframe");
-    iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1";
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&mute=1";
     iframe.title = title;
     iframe.loading = "lazy";
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
@@ -44,11 +49,6 @@
     el.appendChild(iframe);
   }
 
-  function activateAllVideos() {
-    var facades = document.querySelectorAll(".yt-facade");
-    for (var i = 0; i < facades.length; i++) activateVideo(facades[i]);
-  }
-
   function hideBanner() {
     var b = document.getElementById("sx-consent-banner");
     if (b) b.style.display = "none";
@@ -58,11 +58,13 @@
     if (b) b.style.display = "flex";
   }
 
+  // Accepting only unlocks Google Fonts and marks external content as
+  // generally allowed. It must NOT start any video playback by itself -
+  // videos are always started individually, by clicking their own preview.
   function accept() {
     setConsent("granted");
     hideBanner();
     loadGoogleFonts();
-    activateAllVideos();
   }
   function decline() {
     setConsent("denied");
@@ -73,7 +75,6 @@
     var state = getConsent();
     if (state === "granted") {
       loadGoogleFonts();
-      activateAllVideos();
     } else if (state !== "denied") {
       showBanner();
     }
