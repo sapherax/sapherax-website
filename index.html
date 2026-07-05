@@ -25,7 +25,7 @@
 <button class="nav-toggle" aria-label="Menü öffnen" onclick="document.querySelector('nav.main').classList.toggle('open')">&#9776;</button>
     <nav class="main">
       <a href="index.html" class="active">Home</a>
-      <a href="einsatzbereiche-1/index.html">Einsatzbereiche</a>
+      <div class="has-submenu"><a href="einsatzbereiche-1/index.html">Einsatzbereiche</a><div class="submenu"><a href="einsatzbereiche-1/index.html">Übersicht</a><a href="einsatzbereiche-1/gastronomie/index.html">Gastronomie</a><a href="einsatzbereiche-1/hotellerie/index.html">Hospitality / Hotels</a><a href="einsatzbereiche-1/handel/index.html">Handel &amp; Marketing</a><a href="einsatzbereiche-1/pflege/index.html">Pflege &amp; Betreuung</a><a href="einsatzbereiche-1/reinigung/index.html">Reinigung &amp; Hygiene</a><a href="einsatzbereiche-1/transportieren/index.html">Transport &amp; Logistik</a></div></div>
       <div class="has-submenu"><a href="systeme-and-loesungen/index.html">Systeme &amp; Lösungen</a><div class="submenu"><a href="systeme-and-loesungen/dinerbot-t10/index.html">DINERBOT T10</a><a href="systeme-and-loesungen/dinerbot-t11/index.html">DINERBOT T11</a><a href="systeme-and-loesungen/dinerbot-t9/index.html">DINERBOT T9</a><a href="systeme-and-loesungen/dinerbot-t9-pro/index.html">DINERBOT T9 Pro</a><a href="systeme-and-loesungen/kleenbot-c30/index.html">KLEENBOT C30</a><a href="systeme-and-loesungen/kleenbot-c40/index.html">KLEENBOT C40</a><a href="systeme-and-loesungen/butlerbot-w3/index.html">BUTLERBOT W3</a><a href="systeme-and-loesungen/transportroboter-s100/index.html">Transportroboter S100</a><a href="systeme-and-loesungen/transportroboter-s300/index.html">Transportroboter S300</a></div></div>
       <a href="service/index.html">Service</a>
       <a href="unternehmen/index.html">Unternehmen</a>
@@ -36,8 +36,8 @@
   </div>
 </header>
 
-<section class="hero hero-bg" style="background-image:url('assets/img/misc/home.jpg')">
-  <div class="wrap">
+<section class="hero hero-bg">
+  <div class="wrap" style="background-image:url('assets/img/misc/home.jpg')">
     <div class="eyebrow">Servicerobotik &amp; Reinigungsrobotik</div>
       <h1>Jetzt Servicerobotik testen, die Ihr Team wirklich entlastet</h1>
       <p class="lead">Regionaler KEENON-Systempartner für Gastronomie, Handel, Pflege und Hotellerie in Rheinland-Pfalz, Hessen und NRW.</p>
@@ -77,11 +77,13 @@
   <div class="wrap">
     <h2 class="center">Lösungen nach Branche</h2>
     <p class="section-lead center">Jede Branche hat eigene Abläufe. Wählen Sie Ihren Bereich für passende Systeme und Anwendungsbeispiele.</p>
-    <div class="grid grid-4">
+    <div class="grid grid-products">
       <a class="card" href="einsatzbereiche-1/gastronomie/index.html"><img src="assets/img/branches/gastronomie/preview.jpg" alt="Gastronomie"><h3>Gastronomie</h3><p>Servieren, Abräumen, Gäste-Flow verbessern.</p></a>
       <a class="card" href="einsatzbereiche-1/hotellerie/index.html"><img src="assets/img/branches/hotellerie/preview.jpg" alt="Hotellerie"><h3>Hotellerie</h3><p>Room-Service, Gepäcktransport, 24/7-Betrieb.</p></a>
       <a class="card" href="einsatzbereiche-1/handel/index.html"><img src="assets/img/branches/handel/preview.jpg" alt="Handel"><h3>Handel</h3><p>Wegeleitung, Produktpräsentation, Marketing.</p></a>
       <a class="card" href="einsatzbereiche-1/pflege/index.html"><img src="assets/img/branches/pflege/preview.jpg" alt="Pflege"><h3>Pflege</h3><p>Mehr Zeit für Bewohnerinnen und Bewohner.</p></a>
+      <a class="card" href="einsatzbereiche-1/reinigung/index.html"><img src="assets/img/branches/reinigung/preview.jpg" alt="Reinigung &amp; Hygiene" style="object-position:center 56%"><h3>Reinigung &amp; Hygiene</h3><p>Konstante Reinigungsqualität auf großen Flächen.</p></a>
+      <a class="card" href="einsatzbereiche-1/transportieren/index.html"><img src="assets/img/branches/transportieren/preview.jpg" alt="Transport &amp; Logistik"><h3>Transport &amp; Logistik</h3><p>Materialfluss und Schwerlasttransport automatisieren.</p></a>
     </div>
   </div>
 </section>
