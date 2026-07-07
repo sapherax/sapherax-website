@@ -112,13 +112,25 @@
   // YouTube - the iframe is only created once the visitor explicitly clicks
   // the button, since loading it immediately would contact Microsoft servers
   // without consent.
+  // On small screens the embedded iframe often stays blank (mobile browsers,
+  // especially Safari/iOS, block the third-party storage/session Bookings
+  // needs inside a cross-site iframe). So on mobile we skip the iframe
+  // entirely and just open the booking page in a new tab instead.
   function initBookingEmbed() {
     var container = document.getElementById("sx-booking-embed");
     var btn = document.getElementById("sx-booking-load");
     if (!container || !btn) return;
+    var isMobile = window.matchMedia && window.matchMedia("(max-width: 900px)").matches;
+    if (isMobile) {
+      btn.textContent = "Termin buchen (öffnet in neuem Tab)";
+    }
     btn.addEventListener("click", function () {
       var url = container.getAttribute("data-booking-url");
       if (!url) return;
+      if (isMobile) {
+        window.open(url, "_blank", "noopener");
+        return;
+      }
       var iframe = document.createElement("iframe");
       iframe.src = url;
       iframe.setAttribute("scrolling", "yes");
