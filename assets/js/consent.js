@@ -108,11 +108,33 @@
     }
   }
 
+  // Microsoft Bookings widget (Kontaktseite): same click-to-load pattern as
+  // YouTube - the iframe is only created once the visitor explicitly clicks
+  // the button, since loading it immediately would contact Microsoft servers
+  // without consent.
+  function initBookingEmbed() {
+    var container = document.getElementById("sx-booking-embed");
+    var btn = document.getElementById("sx-booking-load");
+    if (!container || !btn) return;
+    btn.addEventListener("click", function () {
+      var url = container.getAttribute("data-booking-url");
+      if (!url) return;
+      var iframe = document.createElement("iframe");
+      iframe.src = url;
+      iframe.setAttribute("scrolling", "yes");
+      iframe.title = "SapheraX Terminbuchung";
+      container.innerHTML = "";
+      container.appendChild(iframe);
+    });
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
     document.addEventListener("DOMContentLoaded", initMobileSubmenus);
+    document.addEventListener("DOMContentLoaded", initBookingEmbed);
   } else {
     init();
     initMobileSubmenus();
+    initBookingEmbed();
   }
 })();

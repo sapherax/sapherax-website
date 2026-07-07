@@ -145,6 +145,13 @@ footer.site .legal { border-top: 1px solid #24405f; margin-top: 28px; padding-to
 .gallery-thumbs img:hover { opacity: .85; }
 .gallery-thumbs img.active { opacity: 1; border-color: var(--accent); }
 .download-list { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.booking-embed { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: var(--bg-card); }
+.booking-embed iframe { width: 100%; height: 720px; border: 0; display: block; }
+.booking-embed-facade { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; height: 720px; padding: 24px; text-align: center; }
+.booking-embed-facade p { max-width: 520px; font-size: 13px; color: var(--text-muted); margin: 0; }
+@media (max-width: 560px) {
+  .booking-embed iframe, .booking-embed-facade { height: 640px; }
+}
 @media (max-width: 900px) {
   .hero-bg { padding: 0; }
   .hero-bg .wrap { min-height: 380px; padding: 28px 20px; }
