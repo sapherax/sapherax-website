@@ -70,7 +70,7 @@ def header_html(rel, active):
         f'      <a href="{rel}service/index.html"{cls("service")}>Service</a>\n'
         f'      <a href="{rel}roi-rechner/index.html"{cls("roi-rechner")}>ROI-Rechner</a>\n'
         f'      <a href="{rel}faq/index.html"{cls("faq")}>FAQ</a>\n'
-        f'      <div class="has-submenu"><a href="{rel}unternehmen/index.html"{cls("unternehmen")}>Unternehmen</a><div class="submenu"><a href="{rel}unternehmen/team/index.html">Team</a><a href="{rel}unternehmen/jobs/index.html">Jobs</a><a href="{rel}kontakt/index.html">Kontakt</a></div></div>\n'
+        f'      <div class="has-submenu"><a href="{rel}unternehmen/index.html"{cls("unternehmen")}>Unternehmen</a><div class="submenu"><a href="{rel}unternehmen/ansprechpartner/index.html">Ansprechpartner</a><a href="{rel}unternehmen/jobs/index.html">Jobs</a><a href="{rel}kontakt/index.html">Kontakt</a></div></div>\n'
         '    </nav>\n'
         f'    <a href="{rel}kontakt/termin/index.html" class="btn btn-primary">Beratung anfragen</a>\n'
         '  </div>\n'
