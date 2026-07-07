@@ -111,6 +111,13 @@ form.contact { display: grid; gap: 16px; max-width: 560px; }
 form.contact label { font-size: 13px; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: 6px; }
 form.contact input, form.contact textarea { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); font-family: inherit; font-size: 14px; background: var(--bg-card); color: var(--text-primary); }
 form.contact textarea { min-height: 120px; resize: vertical; }
+.calc-result-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.calc-result-row:last-child { border-bottom: none; }
+.calc-result-row .label { font-size: 13px; color: var(--text-secondary); }
+.calc-result-row .value { font-size: 18px; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+.calc-result-row.highlight { padding: 16px 0; }
+.calc-result-row.highlight .value { color: var(--accent); font-size: 24px; }
+.calc-note { font-size: 12px; color: var(--text-muted); margin-top: 16px; }
 footer.site { background: var(--text-primary); color: #FFFFFF; padding: 48px 0 24px; margin-top: 40px; font-size: 13px; }
 footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
 footer.site a { color: #FFFFFF; }

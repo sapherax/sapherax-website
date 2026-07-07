@@ -32,6 +32,7 @@ ACTIVE_MAP = {
     "einsatzbereiche-1": "einsatzbereiche",
     "systeme-and-loesungen": "systeme",
     "service": "service",
+    "roi-rechner": "roi-rechner",
     "unternehmen": "unternehmen",
     "faq": "faq",
     "kontakt": "kontakt",
@@ -68,6 +69,7 @@ def header_html(rel, active):
         f'      <div class="has-submenu"><a href="{rel}einsatzbereiche-1/index.html"{cls("einsatzbereiche")}>Einsatzbereiche</a><div class="submenu"><a href="{rel}einsatzbereiche-1/gastronomie/index.html">Gastronomie</a><a href="{rel}einsatzbereiche-1/hotellerie/index.html">Hospitality / Hotels</a><a href="{rel}einsatzbereiche-1/handel/index.html">Handel &amp; Marketing</a><a href="{rel}einsatzbereiche-1/pflege/index.html">Pflege &amp; Betreuung</a><a href="{rel}einsatzbereiche-1/reinigung/index.html">Reinigung &amp; Hygiene</a><a href="{rel}einsatzbereiche-1/transportieren/index.html">Transport &amp; Logistik</a></div></div>\n'
         f'      <div class="has-submenu"><a href="{rel}systeme-and-loesungen/index.html"{cls("systeme")}>Systeme &amp; Lösungen</a><div class="submenu"><a href="{rel}systeme-and-loesungen/dinerbot-t10/index.html">DINERBOT T10</a><a href="{rel}systeme-and-loesungen/dinerbot-t11/index.html">DINERBOT T11</a><a href="{rel}systeme-and-loesungen/dinerbot-t9/index.html">DINERBOT T9</a><a href="{rel}systeme-and-loesungen/dinerbot-t9-pro/index.html">DINERBOT T9 Pro</a><a href="{rel}systeme-and-loesungen/kleenbot-c30/index.html">KLEENBOT C30</a><a href="{rel}systeme-and-loesungen/kleenbot-c40/index.html">KLEENBOT C40</a><a href="{rel}systeme-and-loesungen/butlerbot-w3/index.html">BUTLERBOT W3</a><a href="{rel}systeme-and-loesungen/transportroboter-s100/index.html">Transportroboter S100</a><a href="{rel}systeme-and-loesungen/transportroboter-s300/index.html">Transportroboter S300</a></div></div>\n'
         f'      <a href="{rel}service/index.html"{cls("service")}>Service</a>\n'
+        f'      <a href="{rel}roi-rechner/index.html"{cls("roi-rechner")}>ROI-Rechner</a>\n'
         f'      <a href="{rel}unternehmen/index.html"{cls("unternehmen")}>Unternehmen</a>\n'
         f'      <a href="{rel}faq/index.html"{cls("faq")}>FAQ</a>\n'
         f'      <a href="{rel}kontakt/index.html"{cls("kontakt")}>Kontakt</a>\n'
