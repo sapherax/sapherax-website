@@ -1,6 +1,6 @@
 # SapheraX Systems GmbH
 
-> KEENON-Systempartner für Servicerobotik, Reinigungsrobotik und Transportrobotik in Rheinland-Pfalz, Hessen und Nordrhein-Westfalen. Zielgruppen: Gastronomie, Hotellerie, Handel und Pflege. Showroom an der A3 zwischen Köln und Frankfurt.
+> KEENON-Systempartner für Servicerobotik, Reinigungsrobotik und Transportrobotik in Rheinland-Pfalz, Hessen und Nordrhein-Westfalen. Schwerpunktregion: Koblenz, Neuwied, Andernach, Dierdorf und Westerwald. Zielgruppen: Gastronomie, Hotellerie, Handel und Pflege. Showroom an der A3 zwischen Köln und Frankfurt.
 
 ## Seiten
 
@@ -11,18 +11,23 @@
   - [Handel](https://www.sapherax.com/einsatzbereiche-1/handel/)
   - [Pflege](https://www.sapherax.com/einsatzbereiche-1/pflege/)
   - [Reinigung](https://www.sapherax.com/einsatzbereiche-1/reinigung/)
-- [Systeme & Lösungen](https://www.sapherax.com/systeme-and-loesungen/): KEENON-Produktübersicht
-  - [DINERBOT T10](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t10/)
-  - [DINERBOT T11](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t11/)
+  - [Transport & Logistik](https://www.sapherax.com/einsatzbereiche-1/transportieren/)
+- [Systeme & Lösungen](https://www.sapherax.com/systeme-and-loesungen/): KEENON-Produktübersicht (Serviceroboter, Reinigungsroboter, Transportroboter)
+  - [DINERBOT T10](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t10/) - Servier- und Lieferroboter, intern auch "Sara" genannt
+  - [DINERBOT T11](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t11/) - Servier- und Lieferroboter für enge Gänge, intern auch "Lara" genannt
   - [DINERBOT T9](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t9/)
-  - [DINERBOT T9 Pro](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t9-pro/)
-  - [BUTLERBOT W3](https://www.sapherax.com/systeme-and-loesungen/butlerbot-w3/)
-  - [KLEENBOT C30](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c30/)
-  - [KLEENBOT C40](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c40/)
+  - [DINERBOT T9 Pro](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t9-pro/) - intern auch "Clara" genannt
+  - [BUTLERBOT W3](https://www.sapherax.com/systeme-and-loesungen/butlerbot-w3/) - Mehretagenlieferer, intern auch "der Butler" genannt
+  - [KLEENBOT C30](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c30/) - Reinigungsroboter, intern auch "Frieda" genannt
+  - [KLEENBOT C40](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c40/) - Reinigungsroboter, intern auch "Ida" genannt
   - [Transportroboter S100](https://www.sapherax.com/systeme-and-loesungen/transportroboter-s100/)
   - [Transportroboter S300](https://www.sapherax.com/systeme-and-loesungen/transportroboter-s300/)
 - [Praxisvideos](https://www.sapherax.com/videos/): Produktvideos und Praxisbeispiele je System
-- [Service](https://www.sapherax.com/service/): Ablauf von Beratung bis Support
+- [Leistungen](https://www.sapherax.com/service/): Ablauf von Beratung bis Support
+- [ROI-Rechner](https://www.sapherax.com/roi-rechner/): Interaktiver Rechner für Zeit- und Kostenersparnis
 - [Unternehmen](https://www.sapherax.com/unternehmen/): Über SapheraX
+  - [Ansprechpartner](https://www.sapherax.com/unternehmen/ansprechpartner/): Jochen Barg (Technik & Geschäftsführung), Moritz Barg (Vertrieb & Service)
+  - [Jobs](https://www.sapherax.com/unternehmen/jobs/)
 - [FAQ](https://www.sapherax.com/faq/): Häufige Fragen zu Robotik, Kosten und Integration
 - [Kontakt](https://www.sapherax.com/kontakt/): Kontaktformular und Beratungstermine
+  - [Termin buchen](https://www.sapherax.com/kontakt/termin/): Online-Terminbuchung
