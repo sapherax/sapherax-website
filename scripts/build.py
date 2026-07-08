@@ -118,6 +118,9 @@ SCRIPTS_RE = re.compile(
     r'(?:<script src="(?:\.\./)*assets/js/gallery\.js"[^>]*></script>\s*)?'
     r'<script src="(?:\.\./)*assets/js/consent\.js"[^>]*></script>'
 )
+# Prototype banner shown while the new site was being built alongside the old
+# IONOS site. Not needed once this version replaces IONOS - stripped site-wide.
+PROTO_BANNER_RE = re.compile(r'[ \t]*<div class="proto-banner">.*?</div>\n?', re.DOTALL)
 
 
 def process(path, check_only):
@@ -137,6 +140,7 @@ def process(path, check_only):
     content, n_footer = FOOTER_RE.subn(lambda m: footer_html(rel), content, count=1)
     if n_header and n_footer:
         content, n_scripts = SCRIPTS_RE.subn(lambda m: scripts_html(rel, slug), content, count=1)
+    content = PROTO_BANNER_RE.sub("", content)
 
     if content != original:
         if check_only:
