@@ -147,8 +147,9 @@ footer.site .legal { border-top: 1px solid #24405f; margin-top: 28px; padding-to
 .consent-banner .btn-secondary { background: transparent; color: #fff; border: 1px solid #fff; }
 .consent-banner .btn-secondary:hover { background: rgba(255,255,255,.12); }
 .product-gallery { max-width: 720px; }
-.gallery-main { border-radius: var(--radius); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); }
-.gallery-main img { width: 100%; height: 420px; object-fit: contain; border-radius: var(--radius); background: var(--bg-card); padding: 20px; }
+.gallery-main { border-radius: var(--radius); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); position: relative; }
+.gallery-main img { width: 100%; height: 420px; object-fit: contain; border-radius: var(--radius); background: var(--bg-card); padding: 20px; transition: transform .42s ease; }
+.gallery-main img.slide-clone { position: absolute; top: 0; left: 0; }
 .gallery-thumbs { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
 .gallery-thumbs img { width: 76px; height: 76px; object-fit: cover; border-radius: 8px; cursor: pointer; opacity: .55; border: 2px solid transparent; transition: opacity .2s, border-color .2s; margin: 0; }
 .gallery-thumbs img:hover { opacity: .85; }
