@@ -27,7 +27,6 @@ import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Top-level directory -> nav item that should get class="active"
 ACTIVE_MAP = {
     "einsatzbereiche-1": "einsatzbereiche",
     "systeme-and-loesungen": "systeme",
@@ -35,10 +34,9 @@ ACTIVE_MAP = {
     "roi-rechner": "roi-rechner",
     "faq": "faq",
     "unternehmen": "unternehmen",
-    "kontakt": "unternehmen",  # Kontakt lives under the Unternehmen dropdown now
+    "kontakt": "unternehmen",
 }
 
-# Product pages that additionally need the image-gallery script
 GALLERY_SLUGS = {
     "dinerbot-t10", "dinerbot-t11", "dinerbot-t9", "dinerbot-t9-pro",
     "kleenbot-c30", "kleenbot-c40", "butlerbot-w3",
@@ -118,15 +116,20 @@ SCRIPTS_RE = re.compile(
     r'(?:<script src="(?:\.\./)*assets/js/gallery\.js"[^>]*></script>\s*)?'
     r'<script src="(?:\.\./)*assets/js/consent\.js"[^>]*></script>'
 )
-# Prototype banner shown while the new site was being built alongside the old
-# IONOS site. Not needed once this version replaces IONOS - stripped site-wide.
 PROTO_BANNER_RE = re.compile(r'[ \t]*<div class="proto-banner">.*?</div>\n?', re.DOTALL)
+CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*">')
+
+
+def canonical_html(path_parts):
+    if path_parts:
+        return '<link rel="canonical" href="https://www.sapherax.com/' + "/".join(path_parts) + '/">'
+    return '<link rel="canonical" href="https://www.sapherax.com/">'
 
 
 def process(path, check_only):
     rel_path = os.path.relpath(path, REPO)
     parts = rel_path.split(os.sep)
-    depth = len(parts) - 1  # index.html itself doesn't count
+    depth = len(parts) - 1
     rel = "../" * depth
     top = parts[0] if depth >= 1 else None
     active = "home" if depth == 0 else ACTIVE_MAP.get(top)
@@ -141,6 +144,7 @@ def process(path, check_only):
     if n_header and n_footer:
         content, n_scripts = SCRIPTS_RE.subn(lambda m: scripts_html(rel, slug), content, count=1)
     content = PROTO_BANNER_RE.sub("", content)
+    content = CANONICAL_RE.sub(lambda m: canonical_html(parts[:-1]), content, count=1)
 
     if content != original:
         if check_only:
