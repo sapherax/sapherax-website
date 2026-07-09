@@ -9,6 +9,25 @@
     try { localStorage.setItem(KEY, val); } catch (e) {}
   }
 
+  // Live-Chat (tawk.to): only loaded once the visitor has granted consent,
+  // same as the YouTube/Bookings embeds below - it sets cookies and talks to
+  // tawk.to's servers, so it must not load before consent is given.
+  var TAWK_SRC = "https://embed.tawk.to/6a4f59f5b98d761d48d5ec9e/1jt2veqgb";
+  var tawkLoaded = false;
+  function loadTawk() {
+    if (tawkLoaded) return;
+    tawkLoaded = true;
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_LoadStart = new Date();
+    var s1 = document.createElement("script");
+    var s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = TAWK_SRC;
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+    s0.parentNode.insertBefore(s1, s0);
+  }
+
   // Videos never start on their own. They only load and play once the
   // visitor explicitly clicks the preview/play button for that specific
   // video. Since there is no German audio track yet, playback then starts
@@ -51,6 +70,7 @@
   function accept() {
     setConsent("granted");
     hideBanner();
+    loadTawk();
   }
   function decline() {
     setConsent("denied");
@@ -61,6 +81,8 @@
     var state = getConsent();
     if (state !== "granted" && state !== "denied") {
       showBanner();
+    } else if (state === "granted") {
+      loadTawk();
     }
 
     var a = document.getElementById("sx-consent-accept");
