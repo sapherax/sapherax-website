@@ -43,6 +43,8 @@ nav.main .submenu { display: none; position: absolute; top: 100%; left: 0; backg
 }
 nav.main .submenu a { display: block; padding: 9px 12px; font-size: 13px; border-bottom: none; color: var(--text-secondary); border-radius: 6px; white-space: nowrap; }
 nav.main .submenu a:hover { background: var(--accent-tint); color: var(--accent); text-decoration: none; }
+nav.main .submenu .submenu-label { display: block; padding: 10px 12px 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--text-secondary); opacity: .6; }
+nav.main .submenu .submenu-label:first-child { padding-top: 4px; }
 .submenu-toggle { display: none; }
 .nav-toggle { display: none; background: transparent; border: 1px solid var(--border); border-radius: 8px; font-size: 20px; line-height: 1; padding: 8px 12px; color: var(--text-primary); cursor: pointer; }
 .btn { display: inline-block; font-size: 14px; font-weight: 600; padding: 12px 22px; border-radius: 8px; cursor: pointer; }
