@@ -192,7 +192,7 @@ footer.site .legal { border-top: 1px solid #24405f; margin-top: 28px; padding-to
   }
   nav.main.open { display: flex; }
   nav.main a { padding: 12px 0; border-bottom: 1px solid var(--border); }
-  nav.main .has-submenu { flex-direction: row; flex-wrap: wrap; align-items: center; }
+  nav.main .has-submenu { flex-direction: row; flex-wrap: wrap; align-items: center; border-bottom: 1px solid var(--border); }
   nav.main .has-submenu > a { flex: 1 1 auto; border-bottom: none; padding-bottom: 12px; }
   nav.main .submenu-toggle { display: flex; flex: 0 0 auto; align-items: center; justify-content: center; width: 34px; height: 34px; background: transparent; border: 1px solid var(--border); border-radius: 8px; color: var(--accent); font-size: 18px; line-height: 1; cursor: pointer; padding: 0; margin: 8px 0; }
   nav.main .submenu-toggle::after { content: "+"; display: block; font-weight: 400; }
