@@ -199,7 +199,9 @@ footer.site .legal { border-top: 1px solid #24405f; margin-top: 28px; padding-to
   nav.main .has-submenu.open .submenu-toggle::after { content: "\2212"; }
   nav.main .submenu { display: none; flex-basis: 100%; position: static; box-shadow: none; border: none; padding: 0 0 8px 14px; min-width: 0; }
   nav.main .has-submenu.open .submenu { display: block; }
-  nav.main .submenu a { padding: 8px 0; border-bottom: 1px solid var(--border); border-radius: 0; }
+  nav.main .submenu a { padding: 8px 0; border-bottom: none; border-radius: 0; }
+  nav.main .submenu .submenu-label { padding: 10px 0 4px; margin: 4px 0 0; border-top: 1px solid var(--border); }
+  nav.main .submenu .submenu-label:first-child { margin-top: 0; border-top: none; padding-top: 4px; }
 }
 @media (max-width: 560px) {
   .steps { grid-template-columns: 1fr; }
