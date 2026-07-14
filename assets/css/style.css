@@ -200,9 +200,9 @@ footer.site .legal { border-top: 1px solid #24405f; margin-top: 28px; padding-to
   .postcard-cta .hero-actions { flex: 0 0 auto; }
   .postcard-cta-lead { flex: 0 0 auto; }
   .hero-bg.hero-postcard { background-image: url('../img/misc/home-hero-mobile.jpg') !important; aspect-ratio: 1050 / 925; }
-  .hero-bg.hero-postcard .wrap { padding-top: 14px; }
-  .hero-bg.hero-postcard .eyebrow { font-size: 9px; max-width: 125px; margin-bottom: 5px; line-height: 1.25; }
-  .hero-bg.hero-postcard h1 { font-size: 14px; max-width: 195px; line-height: 1.2; margin: 0 0 6px; }
+  .hero-bg.hero-postcard .wrap { padding-top: 34px; }
+  .hero-bg.hero-postcard .eyebrow { font-size: 9px; max-width: 125px; margin-bottom: 9px; line-height: 1.25; }
+  .hero-bg.hero-postcard h1 { font-size: 14px; max-width: 195px; line-height: 1.2; margin: 0 0 11px; }
   .hero-bg.hero-postcard p.lead { font-size: 10px; max-width: 125px; line-height: 1.25; }
   .hero-postcard-tag { width: clamp(115px,25vw,150px); top: 54px; }
   .gallery-main img { height: 260px; padding: 12px; }
