@@ -71,14 +71,15 @@ section.alt { background: var(--bg); }
 .hero-bg p.lead { color: #E7EEF6; max-width: 600px; }
 .hero-bg .btn-secondary { background: transparent; color: #fff; border: 1px solid #fff; }
 .hero-bg .btn-secondary:hover { background: rgba(255,255,255,.15); }
+.hero-bg.hero-postcard { background-size: cover; background-position: center top; aspect-ratio: 1920 / 891; overflow: hidden; }
+.hero-bg.hero-postcard .wrap { position: relative; z-index: 1; width: auto; max-width: 460px; margin: 0; min-height: 0; background: none; overflow: visible; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 16px 0 20px 56px; }
 .hero-bg.hero-postcard .wrap::before { display: none; }
-.hero-bg.hero-postcard .wrap { background-position: center top; min-height: 520px; justify-content: flex-start; padding: 28px 56px; }
-.hero-bg.hero-postcard .eyebrow { color: var(--accent); }
-.hero-bg.hero-postcard h1 { color: var(--text-primary); font-size: 30px; max-width: 380px; margin-bottom: 12px; }
-.hero-bg.hero-postcard p.lead { color: var(--text-secondary); margin-bottom: 0; }
-.hero-postcard-tag { position: absolute !important; right: 40px !important; top: 18px !important; width: 215px !important; max-width: 215px !important; height: auto !important; z-index: 2 !important; }
-.postcard-cta { background: var(--text-primary); color: #fff; padding: 40px 0; }
-.postcard-cta .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 40px; }
+.hero-bg.hero-postcard .eyebrow { color: var(--accent); margin-bottom: 4px; font-size: 12px; }
+.hero-bg.hero-postcard h1 { color: var(--text-primary); font-size: 27px; line-height: 1.12; max-width: 330px; margin: 0 0 4px; }
+.hero-bg.hero-postcard p.lead { color: var(--text-secondary); margin-bottom: 0; line-height: 1.25; font-size: 16px; }
+.hero-postcard-tag { position: absolute; right: 40px; top: 18px; width: 215px; max-width: 215px; height: auto; z-index: 2; }
+.postcard-cta { background: var(--text-primary); color: #fff; padding: 28px 0; }
+.postcard-cta .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; }
 .postcard-cta-lead { font-size: 18px; font-weight: 500; color: #fff; margin: 0; max-width: 480px; flex: 1 1 320px; }
 .postcard-cta .hero-actions { flex: 0 0 auto; display: flex; gap: 12px; flex-wrap: wrap; }
 .postcard-cta .btn-primary { background: #fff; color: var(--accent-dark); border-color: #fff; }
@@ -193,15 +194,16 @@ footer.site .legal { border-top: 1px solid #24405f; margin-top: 28px; padding-to
   .steps { grid-template-columns: 1fr 1fr; }
   .hero h1 { font-size: 30px; }
   .hero-image img { height: 240px; }
-  .postcard-cta .wrap { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 20px; }
+  .postcard-cta .wrap { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 18px; }
   .postcard-cta .check-list { grid-template-columns: 1fr; flex: 0 0 auto; }
   .postcard-cta .hero-actions { flex: 0 0 auto; }
   .postcard-cta-lead { flex: 0 0 auto; }
-  .hero-bg.hero-postcard .wrap { background-image: url('../img/misc/home-hero-mobile.jpg') !important; min-height: 383px; padding: 16px 20px; }
+  .hero-bg.hero-postcard { background-image: url('../img/misc/home-hero-mobile.jpg') !important; aspect-ratio: 1050 / 1200; }
+  .hero-bg.hero-postcard .wrap { padding: 16px 0 16px 20px; max-width: none; }
   .hero-bg.hero-postcard h1 { font-size: 21px; max-width: 230px; }
   .hero-bg.hero-postcard .eyebrow { font-size: 11px; }
   .hero-bg.hero-postcard p.lead { font-size: 14px; }
-  .hero-postcard-tag { display: none; }
+  .hero-postcard-tag { width: 110px; max-width: 110px; right: 14px; top: 14px; }
   .gallery-main img { height: 260px; padding: 12px; }
   .nav-toggle { display: block; }
   nav.main {
