@@ -77,9 +77,9 @@ section.alt { background: var(--bg); }
 .hero-bg.hero-postcard .eyebrow { color: var(--accent); margin-bottom: 4px; font-size: clamp(10px,0.85vw,13px); max-width: clamp(160px,25vw,380px); line-height: 1.3; }
 .hero-bg.hero-postcard h1 { color: var(--text-primary); font-size: clamp(19px,1.9vw,32px); line-height: 1.16; max-width: clamp(200px,25vw,380px); margin: 0 0 4px; }
 .hero-bg.hero-postcard p.lead { color: var(--text-secondary); margin-bottom: 0; line-height: 1.3; font-size: clamp(12.5px,1.1vw,17px); max-width: clamp(200px,25vw,380px); }
-.hero-postcard-tag { position: absolute; right: clamp(14px,2.5vw,40px); top: clamp(10px,1.3vw,20px); width: clamp(88px,10.5vw,210px); max-width: none; height: auto; z-index: 2; }
-.postcard-cta { background: #11233B; color: #fff; padding: clamp(16px,2.4vw,28px) 0; }
-.postcard-cta .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(10px,1.6vw,20px) clamp(16px,3vw,40px); }
+.hero-postcard-tag { position: absolute; right: clamp(10px,1.8vw,28px); top: clamp(36px,5.2vw,100px); width: clamp(100px,13vw,250px); max-width: none; height: auto; z-index: 2; }
+.postcard-cta { background: #11233B; color: #fff; padding: clamp(8px,1.2vw,16px) 0 clamp(20px,2.6vw,32px); }
+.postcard-cta .wrap { max-width: none; margin: 0; padding: 0 clamp(20px,3vw,56px) 0 clamp(24px,4.2vw,64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(10px,1.6vw,20px) clamp(16px,3vw,40px); }
 .postcard-cta-lead { font-size: clamp(14px,1.3vw,19px); font-weight: 500; color: #fff; margin: 0; max-width: 480px; flex: 1 1 320px; }
 .postcard-cta .hero-actions { flex: 0 0 auto; display: flex; gap: clamp(8px,0.9vw,12px); flex-wrap: wrap; }
 .postcard-cta .btn-primary { background: #fff; color: var(--accent-dark); border-color: #fff; }
@@ -88,9 +88,9 @@ section.alt { background: var(--bg); }
 .postcard-cta .btn-secondary:hover { background: rgba(255,255,255,.15); }
 .postcard-cta .btn { font-size: clamp(12.5px,0.95vw,14px); padding: clamp(9px,0.85vw,12px) clamp(15px,1.6vw,22px); }
 .postcard-cta .check-list { flex: 1 1 100%; grid-template-columns: repeat(3, auto); justify-content: start; gap: clamp(6px,0.8vw,10px) clamp(20px,2.6vw,32px); }
-.check-list.check-mark li { align-items: center; color: #E7EEF6; font-weight: 500; font-size: clamp(12px,0.95vw,15px); }
+.check-list.check-mark li { align-items: center; color: #E7EEF6; font-weight: 500; font-size: clamp(14px,1.3vw,19px); }
 .check-list.check-mark li::before { content: "\2713"; min-width: 20px; width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,.16); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 0; }
-.postcard-cta-note { flex: 1 1 100%; font-size: clamp(11px,0.85vw,13px); color: #BFD6F0; margin: 0; }
+.postcard-cta-note { flex: 1 1 100%; font-size: clamp(14px,1.3vw,19px); color: #BFD6F0; margin: 0; }
 .postcard-cta-note a { color: #fff; }
 h2 { font-size: 28px; font-weight: 600; margin: 0 0 12px; color: var(--text-primary); }
 h2.center { text-align: center; }
