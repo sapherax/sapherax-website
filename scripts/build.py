@@ -41,6 +41,7 @@ GALLERY_SLUGS = {
     "dinerbot-t10", "dinerbot-t11", "dinerbot-t9", "dinerbot-t9-pro",
     "kleenbot-c30", "kleenbot-c40", "butlerbot-w3",
     "transportroboter-s100", "transportroboter-s300",
+    "kleenbot-c20", "kleenbot-c55", "dinerbot-t8", "dinerbot-t3",
 }
 
 SOCIAL_LINKS = (
@@ -65,9 +66,9 @@ def header_html(rel, active):
         '    <nav class="main">\n'
         f'      <div class="has-submenu"><a href="{rel}einsatzbereiche-1/index.html"{cls("einsatzbereiche")}>Einsatzbereiche</a><div class="submenu"><a href="{rel}einsatzbereiche-1/gastronomie/index.html">Gastronomie</a><a href="{rel}einsatzbereiche-1/hotellerie/index.html">Hospitality / Hotels</a><a href="{rel}einsatzbereiche-1/handel/index.html">Handel &amp; Marketing</a><a href="{rel}einsatzbereiche-1/pflege/index.html">Pflege &amp; Betreuung</a><a href="{rel}einsatzbereiche-1/reinigung/index.html">Reinigung &amp; Hygiene</a><a href="{rel}einsatzbereiche-1/transportieren/index.html">Transport &amp; Logistik</a></div></div>\n'
         f'      <div class="has-submenu"><a href="{rel}systeme-and-loesungen/index.html"{cls("systeme")}>Systeme &amp; Lösungen</a><div class="submenu">'
-        f'<span class="submenu-label">Liefern &amp; Abräumen</span><a href="{rel}systeme-and-loesungen/dinerbot-t9/index.html">DINERBOT T9</a><a href="{rel}systeme-and-loesungen/dinerbot-t9-pro/index.html">DINERBOT T9 Pro</a>'
+        f'<span class="submenu-label">Liefern &amp; Abräumen</span><a href="{rel}systeme-and-loesungen/dinerbot-t3/index.html">DINERBOT T3</a><a href="{rel}systeme-and-loesungen/dinerbot-t8/index.html">DINERBOT T8</a><a href="{rel}systeme-and-loesungen/dinerbot-t9/index.html">DINERBOT T9</a><a href="{rel}systeme-and-loesungen/dinerbot-t9-pro/index.html">DINERBOT T9 Pro</a>'
         f'<span class="submenu-label">Präsentieren</span><a href="{rel}systeme-and-loesungen/dinerbot-t10/index.html">DINERBOT T10</a><a href="{rel}systeme-and-loesungen/dinerbot-t11/index.html">DINERBOT T11</a>'
-        f'<span class="submenu-label">Reinigen</span><a href="{rel}systeme-and-loesungen/kleenbot-c30/index.html">KLEENBOT C30</a><a href="{rel}systeme-and-loesungen/kleenbot-c40/index.html">KLEENBOT C40</a>'
+        f'<span class="submenu-label">Reinigen</span><a href="{rel}systeme-and-loesungen/kleenbot-c20/index.html">KLEENBOT C20</a><a href="{rel}systeme-and-loesungen/kleenbot-c30/index.html">KLEENBOT C30</a><a href="{rel}systeme-and-loesungen/kleenbot-c40/index.html">KLEENBOT C40</a><a href="{rel}systeme-and-loesungen/kleenbot-c55/index.html">KLEENBOT C55</a>'
         f'<span class="submenu-label">Roomservice &amp; Etagenlieferung</span><a href="{rel}systeme-and-loesungen/butlerbot-w3/index.html">BUTLERBOT W3</a>'
         f'<span class="submenu-label">Transportieren</span><a href="{rel}systeme-and-loesungen/transportroboter-s100/index.html">Transportroboter S100</a><a href="{rel}systeme-and-loesungen/transportroboter-s300/index.html">Transportroboter S300</a>'
         '</div></div>\n'
