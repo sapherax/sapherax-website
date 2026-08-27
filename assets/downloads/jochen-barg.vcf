@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Barg;Jochen;;;
+FN:Jochen Barg
+ORG:SapheraX Systems GmbH
+TITLE:Gründer & Geschäftsführer
+TEL;TYPE=WORK,VOICE:+49 2689 9259298
+TEL;TYPE=CELL:+49 173 824 9900
+EMAIL:jochen.barg@sapherax.com
+URL:https://www.sapherax.com/kontakt/bargjochen/
+ADR;TYPE=WORK:;;Königsberger Straße 37a;Dierdorf;;56269;Deutschland
+NOTE:Systemintegrator für Service- und Reinigungsrobotik
+END:VCARD
