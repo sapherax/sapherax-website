@@ -25,6 +25,12 @@ a:hover { text-decoration: underline; }
 .legal-text ul, .legal-text ol { padding-left: 20px; margin: 8px 0 16px; }
 .legal-text li { margin-bottom: 4px; }
 .legal-text .legal-note { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; font-size: 13px; color: var(--text-muted); margin: 24px 0; }
+.prose { max-width: 760px; }
+.prose h2 { font-size: 22px; margin: 40px 0 14px; color: var(--text-primary); }
+.prose h2:first-child { margin-top: 0; }
+.prose p, .prose li { color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
+.prose ul, .prose ol { padding-left: 22px; margin: 10px 0 20px; }
+.prose li { margin-bottom: 6px; }
 header.site { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
 .logo { font-size: 20px; font-weight: 600; color: var(--accent-dark); letter-spacing: 0.2px; }
