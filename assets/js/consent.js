@@ -39,7 +39,7 @@
     var id = el.getAttribute("data-yt-id");
     var title = el.getAttribute("data-yt-title") || "YouTube-Video";
     var iframe = document.createElement("iframe");
-    iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&mute=1";
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&mute=1&rel=0";
     iframe.title = title;
     iframe.loading = "lazy";
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
