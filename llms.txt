@@ -27,6 +27,7 @@
 - [ROI-Rechner](https://www.sapherax.com/roi-rechner/): Interaktiver Rechner für Zeit- und Kostenersparnis
 - [Unternehmen](https://www.sapherax.com/unternehmen/): Über SapheraX
   - [Ansprechpartner](https://www.sapherax.com/unternehmen/ansprechpartner/): Jochen Barg (Technik & Geschäftsführung), Moritz Barg (Vertrieb & Service)
+  - [Referenzen](https://www.sapherax.com/unternehmen/referenzen/): Praxisbeispiel Diehl's Hotel, Koblenz-Ehrenbreitstein (DINERBOT T9)
   - [Jobs](https://www.sapherax.com/unternehmen/jobs/)
 - [FAQ](https://www.sapherax.com/faq/): Häufige Fragen zu Robotik, Kosten und Integration
 - [Kontakt](https://www.sapherax.com/kontakt/): Kontaktformular und Beratungstermine
