@@ -35,6 +35,16 @@ jobs:
       - name: Generate header/footer from template
         run: python3 scripts/build.py
 
+      # Nur die GitHub-Vorschau fuer Suchmaschinen sperren.
+      # Die Arbeitskopie und das IONOS-Paket bleiben ohne noindex.
+      # Seiten, die schon ein robots-Meta haben, werden uebersprungen.
+      - name: Vorschau fuer Suchmaschinen sperren (noindex)
+        run: |
+          find . -name "*.html" -not -path "./.git/*" -print0 \
+            | xargs -0 grep -L 'name="robots"' \
+            | xargs -r sed -i 's|<head>|<head>\n<meta name="robots" content="noindex, nofollow">|'
+          echo "Seiten mit noindex: $(grep -rl --include=*.html 'name="robots" content="noindex' . | wc -l)"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
