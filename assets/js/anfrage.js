@@ -16,15 +16,26 @@
     current = Math.max(0, Math.min(i, steps.length - 1));
     steps.forEach(function (s, k) { s.hidden = k !== current; });
     if (bar) bar.style.width = Math.round(((current + 1) / steps.length) * 100) + "%";
-    if (countNow) countNow.textContent = current + 1;
+    if (countNow) countNow.textContent = (branchePreset && current > 1) ? current : current + 1;
     var top = form.getBoundingClientRect().top + window.pageYOffset - 100;
     if (window.pageYOffset > top) window.scrollTo({ top: top, behavior: "smooth" });
   }
 
   function stepHasAnswer(step) {
     var type = step.getAttribute("data-type");
-    if (type === "radio" || type === "checkbox") return !!step.querySelector("input:checked");
+    if (type === "radio") return !!step.querySelector("input:checked");
+    if (type === "checkbox") {
+      var txt = step.querySelector("textarea");
+      return !!step.querySelector("input:checked") || !!(txt && txt.value.trim());
+    }
     return true;
+  }
+
+  var branchePreset = false;
+  function nextIndex(idx) {
+    var n = idx + 1;
+    while (n < steps.length && branchePreset && steps[n].getAttribute("data-name") === "Branche") n++;
+    return n;
   }
 
   steps.forEach(function (step, idx) {
@@ -36,7 +47,7 @@
     if (next) next.addEventListener("click", function () {
       if (!stepHasAnswer(step)) { step.classList.add("quiz-missing"); return; }
       step.classList.remove("quiz-missing");
-      show(idx + 1);
+      show(nextIndex(idx));
     });
     Array.prototype.forEach.call(step.querySelectorAll("input"), function (inp) {
       inp.addEventListener("change", function () {
@@ -50,14 +61,15 @@
         }
         if (type !== "radio") return;
         var hint = inp.getAttribute("data-hint");
+        var stop = inp.getAttribute("data-stop");
         if (hint) {
           hintBox.textContent = hint;
           hintBox.hidden = false;
-          next.hidden = false;
+          next.hidden = !!stop;
         } else {
           hintBox.hidden = true;
           next.hidden = true;
-          setTimeout(function () { show(idx + 1); }, 250);
+          setTimeout(function () { show(nextIndex(idx)); }, 250);
         }
       });
     });
@@ -71,8 +83,10 @@
   var b = params.get("branche");
   if (b && MAP[b]) {
     var r = form.querySelector('input[name="Branche"][value="' + MAP[b] + '"]');
-    if (r) { r.checked = true; start = 1; }
+    if (r) { r.checked = true; branchePreset = true; }
   }
+  var countAll = form.querySelector(".quiz-count-all");
+  if (countAll && branchePreset) countAll.textContent = steps.length - 1;
   show(start);
 
   var wunschField = form.querySelector('input[name="Wunsch"]');
@@ -95,9 +109,15 @@
     if (!wunschField.value) wunschField.value = "Rückruf";
     var buttons = last.querySelectorAll("button");
     Array.prototype.forEach.call(buttons, function (x) { x.disabled = true; });
-    fetch(form.action, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) })
+    // formsubmit.co nimmt Anfragen per JavaScript nur über den ajax Pfad an
+    var url = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+    fetch(url, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) })
       .then(function (res) {
         if (!res.ok) throw new Error("send failed");
+        return res.json();
+      })
+      .then(function (data) {
+        if (data && String(data.success) === "false") throw new Error(data.message || "send failed");
         steps.forEach(function (s) { s.hidden = true; });
         form.querySelector(".quiz-progress").hidden = true;
         form.querySelector(".quiz-count").hidden = true;

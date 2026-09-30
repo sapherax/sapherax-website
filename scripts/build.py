@@ -72,7 +72,7 @@ def header_html(rel, active):
         f'<span class="submenu-label">Roomservice &amp; Etagenlieferung</span><a href="{rel}systeme-and-loesungen/butlerbot-w3/index.html">BUTLERBOT W3</a>'
         f'<span class="submenu-label">Transportieren</span><a href="{rel}systeme-and-loesungen/transportroboter-s100/index.html">Transportroboter S100</a><a href="{rel}systeme-and-loesungen/transportroboter-s300/index.html">Transportroboter S300</a>'
         '</div></div>\n'
-        f'      <div class="has-submenu"><a href="{rel}service/index.html"{cls("service")}>Leistungen</a><div class="submenu"><a href="{rel}service/index.html">Leistungen im Überblick</a><a href="{rel}roi-rechner/index.html">ROI-Rechner</a><a href="{rel}faq/index.html">FAQ</a></div></div>\n'
+        f'      <div class="has-submenu"><a href="{rel}service/index.html"{cls("service")}>Leistungen</a><div class="submenu"><a href="{rel}service/index.html">Leistungen im Überblick</a><a href="{rel}kontakt/termin/index.html">Machbarkeitsanalyse</a><a href="{rel}roi-rechner/index.html">ROI-Rechner</a><a href="{rel}faq/index.html">FAQ</a></div></div>\n'
         f'      <a href="{rel}unternehmen/referenzen/index.html"{cls("referenzen")}>Referenzen</a>\n'
         f'      <div class="has-submenu"><a href="{rel}unternehmen/index.html"{cls("unternehmen")}>Unternehmen</a><div class="submenu"><a href="{rel}unternehmen/ansprechpartner/index.html">Ansprechpartner</a><a href="{rel}unternehmen/jobs/index.html">Jobs</a><a href="{rel}kontakt/index.html">Kontakt</a></div></div>\n'
         '    </nav>\n'
@@ -141,6 +141,8 @@ def process(path, check_only):
     active = "home" if depth == 0 else ACTIVE_MAP.get(top)
     if parts[:2] == ["unternehmen", "referenzen"]:
         active = "referenzen"
+    if parts[:2] == ["kontakt", "termin"]:
+        active = "service"
     slug = parts[-2] if len(parts) >= 2 else None
 
     with open(path, "r", encoding="utf-8") as f:
