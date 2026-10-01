@@ -124,11 +124,20 @@
     }
     errorEl.hidden = true;
     if (!wunschField.value) wunschField.value = "Rückruf";
+    // Mehrfachauswahl als ein Textfeld senden (eine Zeile je Frage in der E-Mail)
+    var fd = new FormData(form);
+    Array.prototype.forEach.call(form.querySelectorAll('.quiz-step[data-type="checkbox"]'), function (st) {
+      var name = st.getAttribute("data-name");
+      var vals = Array.prototype.map.call(st.querySelectorAll('input[type="checkbox"]:checked'), function (c) { return c.value; });
+      fd.delete(name);
+      fd.delete(name + "[]");
+      fd.set(name, vals.join(", "));
+    });
     var buttons = last.querySelectorAll("button");
     Array.prototype.forEach.call(buttons, function (x) { x.disabled = true; });
     // formsubmit.co nimmt Anfragen per JavaScript nur über den ajax Pfad an
     var url = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
-    fetch(url, { method: "POST", headers: { Accept: "application/json" }, body: new FormData(form) })
+    fetch(url, { method: "POST", headers: { Accept: "application/json" }, body: fd })
       .then(function (res) {
         if (!res.ok) throw new Error("send failed");
         return res.json();
