@@ -46,12 +46,11 @@
       <input type="hidden" name="_subject" value="Anfrage Machbarkeitsanalyse (Website)">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="Wunsch" value="">
       <input type="hidden" name="Quelle" value="Terminseite">
       <input type="hidden" name="Fragen" value="beantwortet">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="quiz-progress" aria-hidden="true"><div class="quiz-progress-bar"></div></div>
-      <div class="quiz-top"><p class="quiz-count">Frage <span class="quiz-count-now">1</span> von <span class="quiz-count-all">14</span></p><button type="button" class="quiz-skip">Fragen überspringen und direkt Kontakt aufnehmen</button></div>
+      <div class="quiz-top"><p class="quiz-count">Frage <span class="quiz-count-now">1</span> von <span class="quiz-count-all">7</span></p><button type="button" class="quiz-skip">Fragen überspringen und direkt Kontakt aufnehmen</button></div>
       <fieldset class="quiz-step" data-step="1" data-name="Kundentyp" data-type="radio">
         <legend>Für wen fragen Sie an?</legend>
         <div class="quiz-options">
@@ -99,30 +98,12 @@
           <label class="quiz-option"><input type="checkbox" name="Aufgabe" value="Gäste empfangen und leiten"><span>Gäste empfangen und leiten</span></label>
           <label class="quiz-option"><input type="checkbox" name="Aufgabe" value="Roomservice und Etagenlieferung"><span>Roomservice und Etagenlieferung</span></label>
           <label class="quiz-option"><input type="checkbox" name="Aufgabe" value="Material und Waren transportieren"><span>Material und Waren transportieren</span></label>
-          <label class="quiz-option"><input type="checkbox" name="Aufgabe" value="Noch offen, bitte beraten Sie mich"><span>Noch offen, bitte beraten Sie mich</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Aufgabe" value="Noch offen, bitte beraten Sie mich" data-exclusive="1"><span>Noch offen, bitte beraten Sie mich</span></label>
         </div>
         <div class="quiz-hint" hidden></div>
         <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next">Weiter</button></div>
       </fieldset>
-      <fieldset class="quiz-step" data-step="4" data-name="Problem" data-type="checkbox">
-        <legend>Bei welchem Problem brauchen Sie Unterstützung?</legend>
-        <p class="quiz-sub">Mehrfachauswahl möglich, gerne auch in eigenen Worten. Dann auf Weiter klicken.</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="checkbox" name="Problem" value="Das Personal ist knapp oder überlastet"><span>Das Personal ist knapp oder überlastet</span></label>
-          <label class="quiz-option"><input type="checkbox" name="Problem" value="Offene Stellen lassen sich schwer besetzen"><span>Offene Stellen lassen sich schwer besetzen</span></label>
-          <label class="quiz-option"><input type="checkbox" name="Problem" value="Viele Laufwege kosten das Team Zeit"><span>Viele Laufwege kosten das Team Zeit</span></label>
-          <label class="quiz-option"><input type="checkbox" name="Problem" value="Große Flächen, zu wenig Zeit für die Reinigung"><span>Große Flächen, zu wenig Zeit für die Reinigung</span></label>
-          <label class="quiz-option"><input type="checkbox" name="Problem" value="Die Reinigungsqualität schwankt"><span>Die Reinigungsqualität schwankt</span></label>
-          <label class="quiz-option"><input type="checkbox" name="Problem" value="Routineaufgaben binden Fachkräfte"><span>Routineaufgaben binden Fachkräfte</span></label>
-          <label class="quiz-option"><input type="checkbox" name="Problem" value="Die Personalkosten steigen"><span>Die Personalkosten steigen</span></label>
-          <label class="quiz-option"><input type="checkbox" name="Problem" value="Mehr Zeit für Gäste, Kunden oder Bewohner"><span>Mehr Zeit für Gäste, Kunden oder Bewohner</span></label>
-          <label class="quiz-option"><input type="checkbox" name="Problem" value="Wir wollen im Markt oder im Haus auffallen"><span>Wir wollen im Markt oder im Haus auffallen</span></label>
-        </div>
-        <div><label for="q-problem">Oder in eigenen Worten</label><textarea id="q-problem" name="Problem_Freitext" placeholder="z. B. Unser Team schafft die Reinigung der Flure nachts nicht mehr"></textarea></div>
-        <div class="quiz-hint" hidden></div>
-        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next">Weiter</button></div>
-      </fieldset>
-      <fieldset class="quiz-step" data-step="5" data-name="Flaeche" data-type="radio">
+      <fieldset class="quiz-step" data-step="4" data-name="Flaeche" data-type="radio">
         <legend>Wie groß ist die Fläche, um die es geht?</legend>
         <p class="quiz-sub">Pro Objekt oder Standort, grob geschätzt.</p>
         <div class="quiz-options">
@@ -135,59 +116,24 @@
         <div class="quiz-hint" hidden></div>
         <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next" hidden>Weiter</button></div>
       </fieldset>
-      <fieldset class="quiz-step" data-step="6" data-name="Bereich" data-type="radio">
-        <legend>Wo soll der Roboter fahren?</legend>
+      <fieldset class="quiz-step" data-step="5" data-name="Gebaeude" data-type="checkbox">
+        <legend>Was gibt es auf den Wegen des Roboters?</legend>
+        <p class="quiz-sub">Mehrfachauswahl möglich. Kreuzen Sie alles Passende an und klicken Sie dann auf Weiter.</p>
         <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="Bereich" value="Nur im Innenbereich"><span>Nur im Innenbereich</span></label>
-          <label class="quiz-option"><input type="radio" name="Bereich" value="Innen und außen" data-hint="Unsere Systeme sind für Innenbereiche ausgelegt. Außenflächen können wir nicht abdecken, die Innenbereiche prüfen wir gerne mit Ihnen."><span>Innen und außen</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Gebaeude" value="Nichts davon, alles ebenerdig und offen" data-exclusive="1"><span>Nichts davon, alles ebenerdig und offen</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Gebaeude" value="Einzelne Stufen bis 10 cm" data-hint="Einzelne Stufen bis 10 cm: gut lösbar, wir überbrücken sie mit zusätzlichen Rampen."><span>Einzelne Stufen bis 10 cm</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Gebaeude" value="Höhere Stufen oder Treppen" data-hint="Treppen: Die kann ein Roboter nicht fahren. Oft lassen sich die Bereiche getrennt bedienen oder über einen Aufzug verbinden. Das klären wir bei der Analyse vor Ort."><span>Höhere Stufen oder Treppen</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Gebaeude" value="Mehrere Etagen mit Aufzug" data-hint="Aufzug: Der Roboter kann Aufzug fahren. Dafür ist eine Anbindung an die Aufzugsteuerung notwendig, die wir als Projekt umsetzen."><span>Mehrere Etagen mit Aufzug</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Gebaeude" value="Mehrere Etagen ohne Aufzug" data-hint="Etagen ohne Aufzug: Der Roboter arbeitet dann auf einer Ebene. Je nach Bedarf ist ein Roboter pro Etage sinnvoll. Das rechnen wir gemeinsam durch."><span>Mehrere Etagen ohne Aufzug</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Gebaeude" value="Automatische Türen" data-hint="Automatische Türen: Dafür muss die Türsteuerung an den Roboter angebunden werden. Das setzen wir projektspezifisch um und nehmen es in die Analyse auf."><span>Automatische Türen</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Gebaeude" value="Türen zum Aufdrücken" data-hint="Türen zum Aufdrücken: Dafür werden automatische Türöffner installiert und die Türsteuerung an den Roboter angebunden. Das setzen wir projektspezifisch um und nehmen es in die Analyse auf."><span>Türen zum Aufdrücken</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Gebaeude" value="Auch Außenbereiche" data-hint="Außenbereiche: Unsere Systeme sind für Innenbereiche ausgelegt. Außenflächen können wir nicht abdecken, die Innenbereiche prüfen wir gerne mit Ihnen."><span>Auch Außenbereiche</span></label>
+          <label class="quiz-option"><input type="checkbox" name="Gebaeude" value="Weiß ich nicht" data-exclusive="1" data-hint="Kein Problem, das schauen wir uns bei der Analyse vor Ort an."><span>Weiß ich nicht</span></label>
         </div>
         <div class="quiz-hint" hidden></div>
-        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next" hidden>Weiter</button></div>
+        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next">Weiter</button></div>
       </fieldset>
-      <fieldset class="quiz-step" data-step="7" data-name="Stufen" data-type="radio">
-        <legend>Gibt es auf den Wegen Stufen oder Schwellen?</legend>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="Stufen" value="Nein, alles ebenerdig"><span>Nein, alles ebenerdig</span></label>
-          <label class="quiz-option"><input type="radio" name="Stufen" value="Einzelne Stufen bis 10 cm" data-hint="Gut lösbar: Einzelne Stufen bis 10 cm überbrücken wir mit zusätzlichen Rampen."><span>Einzelne Stufen bis 10 cm</span></label>
-          <label class="quiz-option"><input type="radio" name="Stufen" value="Höhere Stufen oder Treppen" data-hint="Treppen kann ein Roboter nicht fahren. Oft lassen sich die Bereiche getrennt bedienen oder über einen Aufzug verbinden. Das klären wir bei der Analyse vor Ort."><span>Höhere Stufen oder Treppen</span></label>
-          <label class="quiz-option"><input type="radio" name="Stufen" value="Weiß ich nicht" data-hint="Kein Problem, das schauen wir uns bei der Analyse vor Ort an."><span>Weiß ich nicht</span></label>
-        </div>
-        <div class="quiz-hint" hidden></div>
-        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next" hidden>Weiter</button></div>
-      </fieldset>
-      <fieldset class="quiz-step" data-step="8" data-name="Etagen" data-type="radio">
-        <legend>Soll der Roboter mehrere Etagen bedienen?</legend>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="Etagen" value="Nein, eine Ebene"><span>Nein, eine Ebene</span></label>
-          <label class="quiz-option"><input type="radio" name="Etagen" value="Ja, mit Aufzug" data-hint="Möglich: Der Roboter kann Aufzug fahren. Dafür ist eine Anbindung an die Aufzugsteuerung notwendig, die wir als Projekt umsetzen."><span>Ja, mit Aufzug</span></label>
-          <label class="quiz-option"><input type="radio" name="Etagen" value="Ja, ohne Aufzug" data-hint="Ohne Aufzug arbeitet der Roboter auf einer Ebene. Je nach Bedarf ist ein Roboter pro Etage sinnvoll. Das rechnen wir gemeinsam durch."><span>Ja, ohne Aufzug</span></label>
-          <label class="quiz-option"><input type="radio" name="Etagen" value="Weiß ich nicht"><span>Weiß ich nicht</span></label>
-        </div>
-        <div class="quiz-hint" hidden></div>
-        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next" hidden>Weiter</button></div>
-      </fieldset>
-      <fieldset class="quiz-step" data-step="9" data-name="Tueren" data-type="radio">
-        <legend>Gibt es Türen auf den Wegen?</legend>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="Tueren" value="Nein, oder sie stehen offen"><span>Nein, oder sie stehen offen</span></label>
-          <label class="quiz-option"><input type="radio" name="Tueren" value="Ja, automatische Türen" data-hint="Möglich: Dafür muss die Türsteuerung an den Roboter angebunden werden. Das setzen wir projektspezifisch um und nehmen es in die Analyse auf."><span>Ja, automatische Türen</span></label>
-          <label class="quiz-option"><input type="radio" name="Tueren" value="Ja, Türen zum Aufdrücken" data-hint="Möglich: Dafür werden automatische Türöffner installiert und die Türsteuerung an den Roboter angebunden. Das setzen wir projektspezifisch um und nehmen es in die Analyse auf."><span>Ja, Türen zum Aufdrücken</span></label>
-          <label class="quiz-option"><input type="radio" name="Tueren" value="Weiß ich nicht"><span>Weiß ich nicht</span></label>
-        </div>
-        <div class="quiz-hint" hidden></div>
-        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next" hidden>Weiter</button></div>
-      </fieldset>
-      <fieldset class="quiz-step" data-step="10" data-name="Standorte" data-type="radio">
-        <legend>Für wie viele Objekte oder Standorte?</legend>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="Standorte" value="1"><span>1</span></label>
-          <label class="quiz-option"><input type="radio" name="Standorte" value="2 bis 5"><span>2 bis 5</span></label>
-          <label class="quiz-option"><input type="radio" name="Standorte" value="mehr als 5"><span>mehr als 5</span></label>
-        </div>
-        <div class="quiz-hint" hidden></div>
-        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next" hidden>Weiter</button></div>
-      </fieldset>
-      <fieldset class="quiz-step" data-step="11" data-name="Zeitrahmen" data-type="radio">
+      <fieldset class="quiz-step" data-step="6" data-name="Zeitrahmen" data-type="radio">
         <legend>Wann möchten Sie starten?</legend>
         <div class="quiz-options">
           <label class="quiz-option"><input type="radio" name="Zeitrahmen" value="So bald wie möglich"><span>So bald wie möglich</span></label>
@@ -198,43 +144,27 @@
         <div class="quiz-hint" hidden></div>
         <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next" hidden>Weiter</button></div>
       </fieldset>
-      <fieldset class="quiz-step" data-step="12" data-name="Finanzierung" data-type="radio">
-        <legend>Kauf oder Leasing?</legend>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="Finanzierung" value="Kauf"><span>Kauf</span></label>
-          <label class="quiz-option"><input type="radio" name="Finanzierung" value="Leasing"><span>Leasing</span></label>
-          <label class="quiz-option"><input type="radio" name="Finanzierung" value="Noch offen"><span>Noch offen</span></label>
-        </div>
-        <div class="quiz-hint" hidden></div>
-        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next" hidden>Weiter</button></div>
-      </fieldset>
-      <fieldset class="quiz-step" data-step="13" data-name="Gespraech" data-type="radio">
-        <legend>Wie möchten Sie uns kennenlernen?</legend>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="Gespraech" value="Kostenlose Machbarkeitsanalyse bei Ihnen vor Ort"><span>Kostenlose Machbarkeitsanalyse bei Ihnen vor Ort</span></label>
-          <label class="quiz-option"><input type="radio" name="Gespraech" value="Besuch im Showroom an der A3"><span>Besuch im Showroom an der A3</span></label>
-          <label class="quiz-option"><input type="radio" name="Gespraech" value="Online per Video"><span>Online per Video</span></label>
-          <label class="quiz-option"><input type="radio" name="Gespraech" value="Erst einmal telefonisch"><span>Erst einmal telefonisch</span></label>
-        </div>
-        <div class="quiz-hint" hidden></div>
-        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="button" class="btn btn-primary quiz-next" hidden>Weiter</button></div>
-      </fieldset>
-      <fieldset class="quiz-step" data-step="14" data-name="Kontakt" data-type="kontakt">
+      <fieldset class="quiz-step" data-step="7" data-name="Kontakt" data-type="kontakt">
         <legend>Fast geschafft. Wie erreichen wir Sie?</legend>
-        <p class="quiz-sub">Mit Ihren Antworten bereiten wir das Gespräch gezielt vor.</p>
-        <div class="form-2"><div><label for="q-name">Name*</label><input id="q-name" type="text" name="Name" placeholder="Ihr Name" required></div><div><label for="q-firma">Firma oder Einrichtung*</label><input id="q-firma" type="text" name="Firma" placeholder="Ihr Unternehmen" required></div></div>
-        <div class="form-2"><div><label for="q-tel">Telefon*</label><input id="q-tel" type="tel" name="Telefon" placeholder="Für den Rückruf" required></div><div><label for="q-mail">E-Mail*</label><input id="q-mail" type="email" name="email" placeholder="name@firma.de" required></div></div>
-        <div class="form-2"><div><label for="q-ort">PLZ und Ort*</label><input id="q-ort" type="text" name="Ort" placeholder="z. B. 56068 Koblenz" required></div><div><label for="q-zeit">Beste Zeit für einen Rückruf</label><select id="q-zeit" name="Rueckrufzeit"><option value="">Egal</option><option>Vormittags</option><option>Nachmittags</option></select></div></div>
-        <div><label for="q-msg">Ihre Mitteilung an uns</label><textarea id="q-msg" name="Nachricht" placeholder="Optional: Was sollen wir noch wissen?"></textarea></div>
+        <p class="quiz-sub">Wie soll es weitergehen?</p>
+        <div class="quiz-options quiz-mode">
+          <label class="quiz-option"><input type="radio" name="Wunsch" value="Rückruf" checked><span>Bitte rufen Sie mich an</span></label>
+          <label class="quiz-option"><input type="radio" name="Wunsch" value="Termin online buchen"><span>Ich buche selbst einen Termin im Kalender</span></label>
+        </div>
+        <div class="form-2"><div><label for="q-firma">Firma oder Einrichtung<span class="req">*</span></label><input id="q-firma" type="text" name="Firma" placeholder="Ihr Unternehmen" required></div><div><label for="q-mail">E-Mail<span class="req">*</span></label><input id="q-mail" type="email" name="email" placeholder="name@firma.de" required></div></div>
+        <div class="form-2"><div><label for="q-name">Name<span class="req" data-req="rueckruf">*</span></label><input id="q-name" type="text" name="Name" placeholder="Ihr Name" data-req="rueckruf" required></div><div><label for="q-tel">Telefon<span class="req" data-req="rueckruf">*</span></label><input id="q-tel" type="tel" name="Telefon" placeholder="Für den Rückruf" data-req="rueckruf" required></div></div>
+        <div class="form-2"><div><label for="q-ort">PLZ und Ort<span class="req" data-req="rueckruf">*</span></label><input id="q-ort" type="text" name="Ort" placeholder="z. B. 56068 Koblenz" data-req="rueckruf" required></div><div class="quiz-only-rueckruf"><label for="q-zeit">Beste Zeit für einen Rückruf</label><select id="q-zeit" name="Rueckrufzeit"><option value="">Egal</option><option>Vormittags</option><option>Nachmittags</option></select></div></div>
+        <div><label for="q-msg"><span class="quiz-msg-label">Ihre Mitteilung an uns</span><span class="req" data-req="skip" hidden>*</span></label><textarea id="q-msg" name="Nachricht" placeholder="Optional: Was sollen wir noch wissen?"></textarea></div>
+        <p class="form-note quiz-only-termin" hidden>Im nächsten Schritt wählen Sie einen freien Termin im Microsoft Kalender. Bitte verwenden Sie dort dieselbe E-Mail-Adresse.</p>
         <p class="form-note">Ihre Angaben nutzen wir nur, um Ihre Anfrage zu bearbeiten. Mehr in der <a href="../../kontakt/datenschutz/index.html">Datenschutzerklärung</a>.</p>
         <p class="quiz-error" role="alert" hidden></p>
-        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="submit" class="btn btn-primary" data-wunsch="Rückruf">Rückruf anfordern</button><button type="submit" class="btn btn-primary" data-wunsch="Termin online buchen">Senden und Termin buchen</button></div>
+        <div class="quiz-nav"><button type="button" class="btn btn-secondary quiz-back">Zurück</button><button type="submit" class="btn btn-primary quiz-submit">Rückruf anfordern</button></div>
       </fieldset>
       <div class="quiz-done" hidden>
         <h2>Danke für Ihre Anfrage!</h2>
         <p class="quiz-done-callback">Wir melden uns zeitnah telefonisch und vereinbaren den Termin mit Ihnen.</p>
         <div class="quiz-done-booking" hidden>
-          <p>Ihre Angaben sind bei uns. Wählen Sie jetzt direkt einen freien Termin.</p>
+          <p>Ihre Angaben sind bei uns. Wählen Sie jetzt direkt einen freien Termin. Bitte verwenden Sie dabei dieselbe E-Mail-Adresse.</p>
           <div class="booking-embed" id="sx-booking-embed" data-booking-url="https://outlook.office.com/book/Beratung@sapherax.com/?ismsaljsauthenabled">
             <div class="booking-embed-facade">
               <p>Beim Laden des Buchungskalenders wird eine Verbindung zu Microsoft-Servern hergestellt. Dabei können Ihre IP-Adresse sowie weitere technische Informationen übermittelt werden. <a href="../../kontakt/datenschutz/index.html">Mehr in der Datenschutzerklärung</a>.</p>
@@ -247,7 +177,7 @@
     <p style="font-size:13px;color:var(--text-muted);margin-top:24px">Nur eine kurze Frage? Nutzen Sie unser <a href="../../kontakt/index.html">Kontaktformular</a> oder schreiben Sie an info@sapherax.com.</p>
   </div>
 </section>
-<script src="../../assets/js/anfrage.js?v=20261001b" defer></script>
+<script src="../../assets/js/anfrage.js?v=20261001c" defer></script>
 
 <footer class="site">
   <div class="wrap">

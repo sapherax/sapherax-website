@@ -4,9 +4,12 @@
   var form = document.getElementById("quizForm");
   if (!form) return;
   var steps = Array.prototype.slice.call(form.querySelectorAll(".quiz-step"));
+  var lastStep = steps[steps.length - 1];
   var bar = form.querySelector(".quiz-progress-bar");
   var countNow = form.querySelector(".quiz-count-now");
+  var fragenField = form.querySelector('input[name="Fragen"]');
   var current = 0;
+  var branchePreset = false;
   form.classList.add("quiz-js");
 
   var MAP = { reinigung: "Reinigungsfirma oder Gebäudedienstleister", pflege: "Pflegeheim oder betreutes Wohnen",
@@ -17,6 +20,7 @@
     steps.forEach(function (s, k) { s.hidden = k !== current; });
     if (bar) bar.style.width = Math.round(((current + 1) / steps.length) * 100) + "%";
     if (countNow) countNow.textContent = (branchePreset && current > 1) ? current : current + 1;
+    if (steps[current] === lastStep) applyMode();
     var top = form.getBoundingClientRect().top + window.pageYOffset - 100;
     if (window.pageYOffset > top) window.scrollTo({ top: top, behavior: "smooth" });
   }
@@ -31,11 +35,22 @@
     return true;
   }
 
-  var branchePreset = false;
   function nextIndex(idx) {
     var n = idx + 1;
     while (n < steps.length && branchePreset && steps[n].getAttribute("data-name") === "Branche") n++;
     return n;
+  }
+
+  // Hinweise bei Mehrfachauswahl: alle Hinweise der angekreuzten Antworten zeigen
+  function checkboxHints(step, hintBox) {
+    if (!hintBox) return;
+    hintBox.innerHTML = "";
+    Array.prototype.forEach.call(step.querySelectorAll("input:checked[data-hint]"), function (c) {
+      var p = document.createElement("p");
+      p.textContent = c.getAttribute("data-hint");
+      hintBox.appendChild(p);
+    });
+    hintBox.hidden = !hintBox.firstChild;
   }
 
   steps.forEach(function (step, idx) {
@@ -49,17 +64,20 @@
       step.classList.remove("quiz-missing");
       show(nextIndex(idx));
     });
+    if (type !== "radio" && type !== "checkbox") return;
     Array.prototype.forEach.call(step.querySelectorAll("input"), function (inp) {
       inp.addEventListener("change", function () {
         step.classList.remove("quiz-missing");
+        fragenField.value = "beantwortet";
         if (type === "checkbox") {
-          var none = step.querySelector('input[value^="Noch offen"]');
-          if (inp === none && inp.checked) {
-            Array.prototype.forEach.call(step.querySelectorAll("input"), function (o) { if (o !== none) o.checked = false; });
-          } else if (none && inp !== none && inp.checked) { none.checked = false; }
+          if (inp.checked && inp.hasAttribute("data-exclusive")) {
+            Array.prototype.forEach.call(step.querySelectorAll('input[type="checkbox"]'), function (o) { if (o !== inp) o.checked = false; });
+          } else if (inp.checked) {
+            Array.prototype.forEach.call(step.querySelectorAll("input[data-exclusive]"), function (o) { o.checked = false; });
+          }
+          checkboxHints(step, hintBox);
           return;
         }
-        if (type !== "radio") return;
         var hint = inp.getAttribute("data-hint");
         var stop = inp.getAttribute("data-stop");
         if (hint) {
@@ -75,66 +93,89 @@
     });
   });
 
-  // Einstieg von anderen Seiten: ?branche=reinigung setzt die Branche und startet bei Frage 2
+  // Kontaktschritt: Pflichtfelder je nach Weg (Rückruf oder Termin) und ob Fragen übersprungen wurden
+  var submitBtn = lastStep.querySelector(".quiz-submit");
+  var msg = lastStep.querySelector('textarea[name="Nachricht"]');
+  var msgLabel = lastStep.querySelector(".quiz-msg-label");
+  function mode() {
+    var r = lastStep.querySelector('input[name="Wunsch"]:checked');
+    return r && r.value.indexOf("Termin") === 0 ? "termin" : "rueckruf";
+  }
+  function applyMode() {
+    var m = mode();
+    var skipped = fragenField.value === "übersprungen";
+    Array.prototype.forEach.call(lastStep.querySelectorAll('input[data-req="rueckruf"]'), function (el) { el.required = m === "rueckruf"; });
+    Array.prototype.forEach.call(lastStep.querySelectorAll('.req[data-req="rueckruf"]'), function (el) { el.hidden = m !== "rueckruf"; });
+    Array.prototype.forEach.call(lastStep.querySelectorAll(".quiz-only-rueckruf"), function (el) { el.hidden = m !== "rueckruf"; });
+    Array.prototype.forEach.call(lastStep.querySelectorAll(".quiz-only-termin"), function (el) { el.hidden = m !== "termin"; });
+    msg.required = skipped;
+    lastStep.querySelector('.req[data-req="skip"]').hidden = !skipped;
+    msgLabel.textContent = skipped ? "Worum geht es? (ein Satz reicht)" : "Ihre Mitteilung an uns";
+    msg.placeholder = skipped ? "z. B. Wir suchen einen Reinigungsroboter für 800 m² Bürofläche" : "Optional: Was sollen wir noch wissen?";
+    submitBtn.textContent = m === "termin" ? "Senden und Termin buchen" : "Rückruf anfordern";
+  }
+  Array.prototype.forEach.call(lastStep.querySelectorAll('input[name="Wunsch"]'), function (r) {
+    r.addEventListener("change", applyMode);
+  });
+
+  // Einstieg von anderen Seiten: ?branche=reinigung setzt die Branche und überspringt die Frage
   var params = new URLSearchParams(window.location.search);
   var quelle = params.get("quelle") || (document.referrer ? document.referrer.replace(/^https?:\/\/[^/]+/, "") : "");
   if (quelle) form.querySelector('input[name="Quelle"]').value = "Terminseite, von " + quelle;
-  var start = 0;
   var b = params.get("branche");
   if (b && MAP[b]) {
     var r = form.querySelector('input[name="Branche"][value="' + MAP[b] + '"]');
     if (r) { r.checked = true; branchePreset = true; }
   }
   var countAll = form.querySelector(".quiz-count-all");
-  if (countAll && branchePreset) countAll.textContent = steps.length - 1;
-  show(start);
+  if (countAll) countAll.textContent = branchePreset ? steps.length - 1 : steps.length;
+  show(0);
 
   // Abkürzung: ohne Fragen direkt zum Kontaktschritt
   var skip = form.querySelector(".quiz-skip");
   if (skip) skip.addEventListener("click", function () {
-    form.querySelector('input[name="Fragen"]').value = "übersprungen";
+    fragenField.value = "übersprungen";
     show(steps.length - 1);
   });
-  var lastStep = steps[steps.length - 1];
-  steps.forEach(function (s, k) { if (k < steps.length - 1) s.addEventListener("change", function () { form.querySelector('input[name="Fragen"]').value = "beantwortet"; }); });
 
-  // Rückkehr nach normalem Versand (Ausweichweg ohne JavaScript Antwort)
-  if (window.location.hash === "#danke") {
+  function showDone(termin) {
     steps.forEach(function (s) { s.hidden = true; });
     form.querySelector(".quiz-progress").hidden = true;
     form.querySelector(".quiz-top").hidden = true;
-    form.querySelector(".quiz-done").hidden = false;
+    var done = form.querySelector(".quiz-done");
+    done.hidden = false;
+    if (termin) {
+      done.querySelector(".quiz-done-callback").hidden = true;
+      done.querySelector(".quiz-done-booking").hidden = false;
+    }
   }
 
-  var wunschField = form.querySelector('input[name="Wunsch"]');
-  Array.prototype.forEach.call(form.querySelectorAll("button[data-wunsch]"), function (btn) {
-    btn.addEventListener("click", function () { wunschField.value = btn.getAttribute("data-wunsch"); });
-  });
+  // Rückkehr nach normalem Versand (Ausweichweg ohne JavaScript Antwort)
+  if (window.location.hash === "#danke") showDone(false);
+  if (window.location.hash === "#termin") showDone(true);
 
   var errorEl = form.querySelector(".quiz-error");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var last = steps[steps.length - 1];
-    var missing = Array.prototype.filter.call(last.querySelectorAll("[required]"), function (el) { return !el.value.trim(); });
-    var mail = last.querySelector('input[type="email"]');
+    applyMode();
+    var missing = Array.prototype.filter.call(lastStep.querySelectorAll("[required]"), function (el) { return !el.value.trim(); });
+    var mail = lastStep.querySelector('input[type="email"]');
     if (missing.length || (mail && mail.value && !mail.checkValidity())) {
       errorEl.textContent = "Bitte füllen Sie die Pflichtfelder aus (mit * markiert).";
       errorEl.hidden = false;
       return;
     }
     errorEl.hidden = true;
-    if (!wunschField.value) wunschField.value = "Rückruf";
+    var termin = mode() === "termin";
     // Mehrfachauswahl als ein Textfeld senden (eine Zeile je Frage in der E-Mail)
     var fd = new FormData(form);
     Array.prototype.forEach.call(form.querySelectorAll('.quiz-step[data-type="checkbox"]'), function (st) {
       var name = st.getAttribute("data-name");
       var vals = Array.prototype.map.call(st.querySelectorAll('input[type="checkbox"]:checked'), function (c) { return c.value; });
       fd.delete(name);
-      fd.delete(name + "[]");
       fd.set(name, vals.join(", "));
     });
-    var buttons = last.querySelectorAll("button");
-    Array.prototype.forEach.call(buttons, function (x) { x.disabled = true; });
+    submitBtn.disabled = true;
     // formsubmit.co nimmt Anfragen per JavaScript nur über den ajax Pfad an
     var url = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
     fetch(url, { method: "POST", headers: { Accept: "application/json" }, body: fd })
@@ -144,37 +185,27 @@
       })
       .then(function (data) {
         if (data && String(data.success) === "false") throw new Error(data.message || "send failed");
-        steps.forEach(function (s) { s.hidden = true; });
-        form.querySelector(".quiz-progress").hidden = true;
-        form.querySelector(".quiz-top").hidden = true;
-        var done = form.querySelector(".quiz-done");
-        done.hidden = false;
-        if (wunschField.value.indexOf("Termin") === 0) {
-          done.querySelector(".quiz-done-callback").hidden = true;
-          done.querySelector(".quiz-done-booking").hidden = false;
-        }
-        if (window.dataLayer) window.dataLayer.push({ event: "anfrage_gesendet", wunsch: wunschField.value });
+        showDone(termin);
+        if (window.dataLayer) window.dataLayer.push({ event: "anfrage_gesendet", wunsch: termin ? "Termin" : "Rückruf" });
       })
       .catch(function (err) {
-        var msg = err && err.message ? err.message : "";
-        if (/activat/i.test(msg)) {
-          // formsubmit.co: Formular noch nicht bestätigt
+        var m = err && err.message ? err.message : "";
+        submitBtn.disabled = false;
+        if (/activat/i.test(m)) {
           errorEl.textContent = "Das Formular ist beim Versanddienst noch nicht freigeschaltet. Bitte schreiben Sie uns vorerst an info@sapherax.com.";
           errorEl.hidden = false;
-          Array.prototype.forEach.call(buttons, function (x) { x.disabled = false; });
-          if (window.console) console.warn("FormSubmit:", msg);
+          if (window.console) console.warn("FormSubmit:", m);
           return;
         }
         if (window.location.protocol === "file:") {
           errorEl.textContent = "Test aus einer lokalen Datei: Der Versanddienst nimmt nur Anfragen von einer Webadresse an. Bitte über die Vorschau im Internet testen.";
           errorEl.hidden = false;
-          Array.prototype.forEach.call(buttons, function (x) { x.disabled = false; });
           return;
         }
         // Ausweichweg: normaler Formularversand, danach zurück auf diese Seite
         var nxt = document.createElement("input");
         nxt.type = "hidden"; nxt.name = "_next";
-        nxt.value = window.location.href.split("#")[0].split("?")[0] + "#danke";
+        nxt.value = window.location.href.split("#")[0].split("?")[0] + (termin ? "#termin" : "#danke");
         form.appendChild(nxt);
         form.submit();
       });
