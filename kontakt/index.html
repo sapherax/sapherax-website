@@ -60,6 +60,7 @@
       var form = document.getElementById('contactForm');
       if (!form) return;
       var statusEl = document.getElementById('contactFormStatus');
+      if (window.location.hash === '#gesendet') { statusEl.textContent = 'Danke! Ihre Nachricht wurde versendet. Wir melden uns zeitnah.'; }
       form.addEventListener('submit', function(e){
         e.preventDefault();
         var btn = form.querySelector('button[type="submit"]');
@@ -79,7 +80,13 @@
           form.reset();
           Array.prototype.forEach.call(form.querySelectorAll('div, button'), function(el){ el.style.display = 'none'; });
           statusEl.textContent = 'Danke! Ihre Nachricht wurde versendet. Wir melden uns zeitnah.';
-        }).catch(function(){
+        }).catch(function(err){
+          if (window.location.protocol !== 'file:' && !/activat/i.test(err && err.message || '')) {
+            // Ausweichweg: normaler Formularversand über formsubmit.co
+            var nxt = document.createElement('input'); nxt.type = 'hidden'; nxt.name = '_next';
+            nxt.value = window.location.href.split('#')[0] + '#gesendet';
+            form.appendChild(nxt); form.submit(); return;
+          }
           statusEl.style.color = '#c0392b';
           statusEl.textContent = 'Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie direkt an info@sapherax.com.';
           btn.disabled = false;

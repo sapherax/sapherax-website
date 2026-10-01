@@ -48,9 +48,10 @@
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="Wunsch" value="">
       <input type="hidden" name="Quelle" value="Terminseite">
+      <input type="hidden" name="Fragen" value="beantwortet">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="quiz-progress" aria-hidden="true"><div class="quiz-progress-bar"></div></div>
-      <p class="quiz-count">Frage <span class="quiz-count-now">1</span> von <span class="quiz-count-all">14</span></p>
+      <div class="quiz-top"><p class="quiz-count">Frage <span class="quiz-count-now">1</span> von <span class="quiz-count-all">14</span></p><button type="button" class="quiz-skip">Fragen überspringen und direkt Kontakt aufnehmen</button></div>
       <fieldset class="quiz-step" data-step="1" data-name="Kundentyp" data-type="radio">
         <legend>Für wen fragen Sie an?</legend>
         <div class="quiz-options">
@@ -169,8 +170,8 @@
         <legend>Gibt es Türen auf den Wegen?</legend>
         <div class="quiz-options">
           <label class="quiz-option"><input type="radio" name="Tueren" value="Nein, oder sie stehen offen"><span>Nein, oder sie stehen offen</span></label>
-          <label class="quiz-option"><input type="radio" name="Tueren" value="Ja, automatische Türen"><span>Ja, automatische Türen</span></label>
-          <label class="quiz-option"><input type="radio" name="Tueren" value="Ja, Türen zum Aufdrücken" data-hint="Möglich: Dafür müssen automatische Türöffner installiert werden. Das nehmen wir in die Analyse auf."><span>Ja, Türen zum Aufdrücken</span></label>
+          <label class="quiz-option"><input type="radio" name="Tueren" value="Ja, automatische Türen" data-hint="Möglich: Dafür muss die Türsteuerung an den Roboter angebunden werden. Das setzen wir projektspezifisch um und nehmen es in die Analyse auf."><span>Ja, automatische Türen</span></label>
+          <label class="quiz-option"><input type="radio" name="Tueren" value="Ja, Türen zum Aufdrücken" data-hint="Möglich: Dafür werden automatische Türöffner installiert und die Türsteuerung an den Roboter angebunden. Das setzen wir projektspezifisch um und nehmen es in die Analyse auf."><span>Ja, Türen zum Aufdrücken</span></label>
           <label class="quiz-option"><input type="radio" name="Tueren" value="Weiß ich nicht"><span>Weiß ich nicht</span></label>
         </div>
         <div class="quiz-hint" hidden></div>

@@ -89,6 +89,23 @@
   if (countAll && branchePreset) countAll.textContent = steps.length - 1;
   show(start);
 
+  // Abkürzung: ohne Fragen direkt zum Kontaktschritt
+  var skip = form.querySelector(".quiz-skip");
+  if (skip) skip.addEventListener("click", function () {
+    form.querySelector('input[name="Fragen"]').value = "übersprungen";
+    show(steps.length - 1);
+  });
+  var lastStep = steps[steps.length - 1];
+  steps.forEach(function (s, k) { if (k < steps.length - 1) s.addEventListener("change", function () { form.querySelector('input[name="Fragen"]').value = "beantwortet"; }); });
+
+  // Rückkehr nach normalem Versand (Ausweichweg ohne JavaScript Antwort)
+  if (window.location.hash === "#danke") {
+    steps.forEach(function (s) { s.hidden = true; });
+    form.querySelector(".quiz-progress").hidden = true;
+    form.querySelector(".quiz-top").hidden = true;
+    form.querySelector(".quiz-done").hidden = false;
+  }
+
   var wunschField = form.querySelector('input[name="Wunsch"]');
   Array.prototype.forEach.call(form.querySelectorAll("button[data-wunsch]"), function (btn) {
     btn.addEventListener("click", function () { wunschField.value = btn.getAttribute("data-wunsch"); });
@@ -120,7 +137,7 @@
         if (data && String(data.success) === "false") throw new Error(data.message || "send failed");
         steps.forEach(function (s) { s.hidden = true; });
         form.querySelector(".quiz-progress").hidden = true;
-        form.querySelector(".quiz-count").hidden = true;
+        form.querySelector(".quiz-top").hidden = true;
         var done = form.querySelector(".quiz-done");
         done.hidden = false;
         if (wunschField.value.indexOf("Termin") === 0) {
@@ -129,10 +146,28 @@
         }
         if (window.dataLayer) window.dataLayer.push({ event: "anfrage_gesendet", wunsch: wunschField.value });
       })
-      .catch(function () {
-        errorEl.textContent = "Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie an info@sapherax.com.";
-        errorEl.hidden = false;
-        Array.prototype.forEach.call(buttons, function (x) { x.disabled = false; });
+      .catch(function (err) {
+        var msg = err && err.message ? err.message : "";
+        if (/activat/i.test(msg)) {
+          // formsubmit.co: Formular noch nicht bestätigt
+          errorEl.textContent = "Das Formular ist beim Versanddienst noch nicht freigeschaltet. Bitte schreiben Sie uns vorerst an info@sapherax.com.";
+          errorEl.hidden = false;
+          Array.prototype.forEach.call(buttons, function (x) { x.disabled = false; });
+          if (window.console) console.warn("FormSubmit:", msg);
+          return;
+        }
+        if (window.location.protocol === "file:") {
+          errorEl.textContent = "Test aus einer lokalen Datei: Der Versanddienst nimmt nur Anfragen von einer Webadresse an. Bitte über die Vorschau im Internet testen.";
+          errorEl.hidden = false;
+          Array.prototype.forEach.call(buttons, function (x) { x.disabled = false; });
+          return;
+        }
+        // Ausweichweg: normaler Formularversand, danach zurück auf diese Seite
+        var nxt = document.createElement("input");
+        nxt.type = "hidden"; nxt.name = "_next";
+        nxt.value = window.location.href.split("#")[0].split("?")[0] + "#danke";
+        form.appendChild(nxt);
+        form.submit();
       });
   });
 })();
