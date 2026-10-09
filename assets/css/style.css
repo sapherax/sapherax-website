@@ -134,6 +134,7 @@ table.specs td:first-child { color: var(--text-primary); font-weight: 600; width
 .cta-band .btn-secondary { background: #fff; color: var(--accent-dark); border-color: #fff; }
 .cta-band .btn-secondary:hover { background: var(--accent-tint); }
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.steps.steps-3 { grid-template-columns: repeat(3, 1fr); }
 .step { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 22px; position: relative; }
 .step .num { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-tint); color: var(--accent-dark); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; margin-bottom: 14px; }
 form.contact { display: grid; gap: 16px; max-width: 560px; }
@@ -240,6 +241,7 @@ footer.site .legal { border-top: 1px solid #24405f; margin-top: 28px; padding-to
   .grid-2, .grid-3, .grid-4, .grid-2.grid-vertical-video, form.contact .form-2 { grid-template-columns: 1fr; }
   form.quiz { padding: 20px; }
   .steps { grid-template-columns: 1fr 1fr; }
+  .steps.steps-3 { grid-template-columns: 1fr; }
   .hero h1 { font-size: 30px; }
   .hero-image img { height: 240px; }
   .postcard-cta .wrap { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 14px; padding-top: 8px; }

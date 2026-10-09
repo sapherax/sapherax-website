@@ -88,7 +88,7 @@ def footer_html(rel):
         '  <div class="wrap">\n'
         '    <div>\n'
         f'      <div class="logo logo-mark"><img src="{rel}assets/img/logo/icon-96.png" alt="" class="logo-icon"><span class="logo-text">SapheraX</span></div>\n'
-        '      <p style="max-width:280px;font-size:13px;margin-top:10px;opacity:.85">KEENON-Systempartner für Servicerobotik, Reinigungsrobotik und Transportrobotik in Rheinland-Pfalz, Hessen und NRW.</p>\n'
+        '      <p style="max-width:280px;font-size:13px;margin-top:10px;opacity:.85">KEENON-Systempartner für Servicerobotik, Reinigungsrobotik und Transportrobotik.</p>\n'
         '    </div>\n'
         '    <div>\n'
         '      <div style="font-weight:600;color:#fff;margin-bottom:10px;font-size:13px">Kontakt</div>\n'
