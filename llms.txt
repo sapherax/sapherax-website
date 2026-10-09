@@ -1,6 +1,6 @@
 # SapheraX Systems GmbH
 
-> KEENON-Systempartner für Servicerobotik, Reinigungsrobotik und Transportrobotik in Rheinland-Pfalz, Hessen und Nordrhein-Westfalen. Schwerpunktregion: Koblenz, Neuwied, Andernach, Dierdorf und Westerwald. Zielgruppen: Gastronomie, Hotellerie, Handel und Pflege. Showroom an der A3 zwischen Köln und Frankfurt.
+> SapheraX Systems GmbH aus Dierdorf berät Unternehmen zu Service-, Reinigungs- und Transportrobotik. Wir prüfen den Einsatz kostenlos vor Ort, empfehlen ein passendes Modell und berechnen die Wirtschaftlichkeit. Danach begleiten wir Lieferung, Einrichtung, Einweisung und Service. Unsere Systeme zeigen wir live im Showroom an der A3 zwischen Köln und Frankfurt. KEENON-Systempartner für Service-, Reinigungs- und Transportroboter. Zielgruppen: Reinigungsfirmen und Gebäudedienstleister, Pflege, Hotellerie, Gastronomie und Handel. Einstieg: kostenlose Machbarkeitsanalyse vor Ort.
 
 ## Seiten
 
@@ -24,8 +24,8 @@
 - [Praxisvideos](https://www.sapherax.com/videos/): Produktvideos und Praxisbeispiele je System
 - [Leistungen](https://www.sapherax.com/service/): Ablauf von Beratung bis Support
 - [ROI-Rechner](https://www.sapherax.com/roi-rechner/): Interaktiver Rechner für Zeit- und Kostenersparnis
-- [Unternehmen](https://www.sapherax.com/unternehmen/): Über SapheraX
-  - [Ansprechpartner](https://www.sapherax.com/unternehmen/ansprechpartner/): Jochen Barg (Technik & Geschäftsführung), Moritz Barg (Vertrieb & Service)
+- [Unternehmen](https://www.sapherax.com/unternehmen/): Über SapheraX, Faktenabsatz und Kurzprofil
+  - [Ansprechpartner](https://www.sapherax.com/unternehmen/ansprechpartner/): Jochen Barg (Technische Leitung und Geschäftsführung), Moritz Barg (Vertrieb und Service)
   - [Referenzen](https://www.sapherax.com/unternehmen/referenzen/): Praxisbeispiel Diehl's Hotel, Koblenz-Ehrenbreitstein (DINERBOT T9), Demonstration im Kompetenzzentrum Supermarkt der food akademie Neuwied (DINERBOT T10 und KLEENBOT C40)
   - [Jobs](https://www.sapherax.com/unternehmen/jobs/)
 - [FAQ](https://www.sapherax.com/faq/): Häufige Fragen zu Robotik, Kosten und Integration
