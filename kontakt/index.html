@@ -60,6 +60,14 @@
       var form = document.getElementById('contactForm');
       if (!form) return;
       var statusEl = document.getElementById('contactFormStatus');
+      var sxParams = new URLSearchParams(window.location.search);
+      var sxProdukt = (sxParams.get('produkt') || '').replace(/[^A-Za-z0-9 ÄÖÜäöü]/g, '').slice(0, 60);
+      if (sxParams.get('anliegen') === 'angebot' && sxProdukt) {
+        var sxMsg = form.querySelector('textarea[name="message"]');
+        if (sxMsg && !sxMsg.value) sxMsg.value = 'Bitte senden Sie mir ein Angebot für den ' + sxProdukt + ' (Kauf oder Leasing).';
+        var sxSubj = form.querySelector('input[name="_subject"]');
+        if (sxSubj) sxSubj.value = 'Angebotsanfrage ' + sxProdukt + ' (Website)';
+      }
       if (window.location.hash === '#gesendet') { statusEl.textContent = 'Danke! Ihre Nachricht wurde versendet. Wir melden uns zeitnah.'; }
       form.addEventListener('submit', function(e){
         e.preventDefault();
