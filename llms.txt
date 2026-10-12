@@ -1,6 +1,6 @@
 # SapheraX Systems GmbH
 
-> SapheraX Systems GmbH aus Dierdorf berät Unternehmen zu Service-, Reinigungs- und Transportrobotik. Wir prüfen den Einsatz kostenlos vor Ort, empfehlen ein passendes Modell und berechnen die Wirtschaftlichkeit. Danach begleiten wir Lieferung, Einrichtung, Einweisung und Service. Unsere Systeme zeigen wir live im Showroom an der A3 zwischen Köln und Frankfurt. KEENON-Systempartner für Service-, Reinigungs- und Transportroboter. Zielgruppen: Reinigungsfirmen und Gebäudedienstleister, Pflege, Hotellerie, Gastronomie und Handel. Einstieg: kostenlose Machbarkeitsanalyse vor Ort.
+> SapheraX Systems GmbH aus Dierdorf berät Unternehmen zu Service-, Reinigungs- und Transportrobotik. Wir prüfen den Einsatz kostenlos, empfehlen ein passendes Modell und berechnen die Wirtschaftlichkeit. Danach begleiten wir Lieferung, Einrichtung, Einweisung und Service. Unsere Systeme zeigen wir live im Showroom an der A3 zwischen Köln und Frankfurt. KEENON-Systempartner für Service-, Reinigungs- und Transportroboter. Zielgruppen: Reinigungsfirmen und Gebäudedienstleister, Pflege, Hotellerie, Gastronomie und Handel. Einstieg: kostenlose Machbarkeitsanalyse.
 
 ## Seiten
 
@@ -12,13 +12,17 @@
   - [Pflege](https://www.sapherax.com/einsatzbereiche-1/pflege/)
   - [Reinigung](https://www.sapherax.com/einsatzbereiche-1/reinigung/)
   - [Transport & Logistik](https://www.sapherax.com/einsatzbereiche-1/transportieren/)
-- [Systeme & Lösungen](https://www.sapherax.com/systeme-and-loesungen/): KEENON-Produktübersicht (Serviceroboter, Reinigungsroboter, Transportroboter)
+- [Systeme & Lösungen](https://www.sapherax.com/systeme-and-loesungen/): KEENON-Produktübersicht (Serviceroboter, Reinigungsroboter, Transportroboter). Jede Produktseite enthält häufige Fragen mit Antworten (FAQ).
+  - [DINERBOT T3](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t3/) - Lieferroboter mit geschlossener Kabine
+  - [DINERBOT T8](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t8/) - kompakter Lieferroboter für schmale Wege
   - [DINERBOT T10](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t10/) - Servier- und Lieferroboter, intern auch "Sara" genannt
   - [DINERBOT T11](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t11/) - Servier- und Lieferroboter für enge Gänge, intern auch "Lara" genannt
   - [DINERBOT T9](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t9/)
   - [BUTLERBOT W3](https://www.sapherax.com/systeme-and-loesungen/butlerbot-w3/) - Mehretagenlieferer, intern auch "der Butler" genannt
+  - [KLEENBOT C20](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c20/) - kompakter Reinigungsroboter
   - [KLEENBOT C30](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c30/) - Reinigungsroboter, intern auch "Frieda" genannt
   - [KLEENBOT C40](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c40/) - Reinigungsroboter, intern auch "Ida" genannt
+  - [KLEENBOT C55](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c55/) - Reinigungsroboter für mittlere und große Flächen
   - [Transportroboter S100](https://www.sapherax.com/systeme-and-loesungen/transportroboter-s100/)
   - [Transportroboter S300](https://www.sapherax.com/systeme-and-loesungen/transportroboter-s300/)
 - [Praxisvideos](https://www.sapherax.com/videos/): Produktvideos und Praxisbeispiele je System
@@ -29,5 +33,8 @@
   - [Referenzen](https://www.sapherax.com/unternehmen/referenzen/): Praxisbeispiel Diehl's Hotel, Koblenz-Ehrenbreitstein (DINERBOT T9), Demonstration im Kompetenzzentrum Supermarkt der food akademie Neuwied (DINERBOT T10 und KLEENBOT C40)
   - [Jobs](https://www.sapherax.com/unternehmen/jobs/)
 - [FAQ](https://www.sapherax.com/faq/): Häufige Fragen zu Robotik, Kosten und Integration
+  - [Wissen](https://www.sapherax.com/wissen/): Übersicht
+  - [Robotik Lexikon](https://www.sapherax.com/wissen/robotik-lexikon/): 15 Begriffe zur Service- und Reinigungsrobotik
+  - [Ratgeber](https://www.sapherax.com/wissen/ratgeber-roboter-einfuehren/): Roboter im Betrieb einführen in acht Schritten
 - [Kontakt](https://www.sapherax.com/kontakt/): Kontaktformular und Beratungstermine
   - [Termin buchen](https://www.sapherax.com/kontakt/termin/): Online-Terminbuchung
