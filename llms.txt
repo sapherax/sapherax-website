@@ -27,6 +27,7 @@
   - [Transportroboter S300](https://www.sapherax.com/systeme-and-loesungen/transportroboter-s300/)
 - [Praxisvideos](https://www.sapherax.com/videos/): Produktvideos und Praxisbeispiele je System
 - [Leistungen](https://www.sapherax.com/service/): Ablauf von Beratung bis Support
+  - [Integrationen](https://www.sapherax.com/service/integrationen/): Anbindung an Aufzug (BUTLERBOT W3, KLEENBOT C40 und C55, Transportroboter S100 und S300), automatische Türen und Telefon, als Projekt ohne Pauschalpreis
 - [ROI-Rechner](https://www.sapherax.com/roi-rechner/): Interaktiver Rechner für Zeit- und Kostenersparnis
 - [Unternehmen](https://www.sapherax.com/unternehmen/): Über SapheraX, Faktenabsatz und Kurzprofil
   - [Ansprechpartner](https://www.sapherax.com/unternehmen/ansprechpartner/): Jochen Barg (Technische Leitung und Geschäftsführung), Moritz Barg (Vertrieb und Service)
