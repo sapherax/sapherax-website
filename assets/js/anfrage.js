@@ -13,7 +13,10 @@
   form.classList.add("quiz-js");
 
   var MAP = { reinigung: "Reinigungsfirma oder Gebäudedienstleister", pflege: "Pflegeheim oder betreutes Wohnen",
-    hotel: "Hotel", gastronomie: "Restaurant oder Café", handel: "Einzelhandel", logistik: "Logistik oder Lager" };
+    hotel: "Hotel", gastronomie: "Restaurant oder Café", handel: "Einzelhandel", logistik: "Logistik oder Lager",
+    facility: "Facility Management", klinik: "Krankenhaus oder Klinik", praxis: "Arztpraxis oder Therapie", kantine: "Kantine oder Catering",
+    supermarkt: "Supermarkt oder Lebensmittelhandel", autohaus: "Autohaus", fitness: "Fitnessstudio", buero: "Büro oder Verwaltung",
+    schule: "Schule, Akademie oder Bildung", messe: "Messe oder Events", freizeit: "Freizeit, Museum oder Kino", industrie: "Industrie oder Produktion" };
 
   function show(i) {
     current = Math.max(0, Math.min(i, steps.length - 1));

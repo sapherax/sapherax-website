@@ -1,6 +1,6 @@
 # SapheraX Systems GmbH
 
-> SapheraX Systems GmbH aus Dierdorf berät Unternehmen zu Service-, Reinigungs- und Transportrobotik. Wir prüfen den Einsatz kostenlos, empfehlen ein passendes Modell und berechnen die Wirtschaftlichkeit. Danach begleiten wir Lieferung, Einrichtung, Einweisung und Service. Unsere Systeme zeigen wir live im Showroom an der A3 zwischen Köln und Frankfurt. KEENON-Systempartner für Service-, Reinigungs- und Transportroboter. Zielgruppen: Reinigungsfirmen und Gebäudedienstleister, Pflege, Hotellerie, Gastronomie und Handel. Einstieg: kostenlose Machbarkeitsanalyse.
+> SapheraX Systems GmbH aus Dierdorf berät Unternehmen zu Service-, Reinigungs- und Transportrobotik. Wir prüfen den Einsatz kostenlos, empfehlen ein passendes Modell und berechnen die Wirtschaftlichkeit. Danach begleiten wir Lieferung, Einrichtung, Einweisung und Service. Unsere Systeme zeigen wir live im Showroom an der A3 zwischen Köln und Frankfurt. Einsatzgebiet: deutschlandweit, gut erreichbar in Rheinland-Pfalz, Hessen und Nordrhein-Westfalen, zum Beispiel Koblenz, Neuwied, Köln, Bonn, Siegen, Frankfurt und Wiesbaden. KEENON-Systempartner für Service-, Reinigungs- und Transportroboter. Zielgruppen: Reinigungsfirmen und Gebäudedienstleister, Pflege, Hotellerie, Gastronomie und Handel. Einstieg: kostenlose Machbarkeitsanalyse.
 
 ## Seiten
 
@@ -12,6 +12,7 @@
   - [Pflege](https://www.sapherax.com/einsatzbereiche-1/pflege/)
   - [Reinigung](https://www.sapherax.com/einsatzbereiche-1/reinigung/)
   - [Transport & Logistik](https://www.sapherax.com/einsatzbereiche-1/transportieren/)
+  - Weitere Einsatzbereiche ohne eigene Seite: Facility Management, Krankenhaus und Klinik, Arztpraxis und Therapie, Kantine und Catering, Supermarkt und Lebensmittelhandel, Autohaus, Fitnessstudio, Büro und Verwaltung, Schule, Akademie und Bildung, Messe und Events, Freizeit, Museum und Kino, Industrie und Produktion
 - [Systeme & Lösungen](https://www.sapherax.com/systeme-and-loesungen/): KEENON-Produktübersicht (Serviceroboter, Reinigungsroboter, Transportroboter). Jede Produktseite enthält häufige Fragen mit Antworten (FAQ).
   - [DINERBOT T3](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t3/) - Lieferroboter mit geschlossener Kabine
   - [DINERBOT T8](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t8/) - kompakter Lieferroboter für schmale Wege
