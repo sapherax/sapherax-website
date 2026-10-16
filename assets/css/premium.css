@@ -132,12 +132,12 @@ body.home .grid-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ===== Silbergrau (neutral) als Seitenfarbe, Menueleiste in hellem Silber ===== */
-:root { --bg: #E3E4E6; --silver-line: rgba(16,35,59,.08); --silver-bar: #D3D5D9; }
+:root { --bg: #E5E5E5; --silver-line: rgba(0,0,0,.09); --silver-bar: #D4D4D4; }
 body { background: var(--bg); }
 section.alt, body.home section.alt { background: var(--bg); border-top: 1px solid var(--silver-line); border-bottom: 1px solid var(--silver-line); }
 .card, .step, .faq-item, form.quiz { background: #fff; }
 
-header.site { background: linear-gradient(180deg, #DADCDF 0%, var(--silver-bar) 100%); border-bottom: 1px solid rgba(16,35,59,.14); -webkit-backdrop-filter: none; backdrop-filter: none; }
+header.site { background: linear-gradient(180deg, #DCDCDC 0%, var(--silver-bar) 100%); border-bottom: 1px solid rgba(16,35,59,.14); -webkit-backdrop-filter: none; backdrop-filter: none; }
 header.site .btn-primary { box-shadow: 0 4px 14px rgba(12,75,140,.25); }
 nav.main > a, nav.main .has-submenu > a { color: var(--navy); }
 nav.main > a.active, nav.main .has-submenu > a.active, nav.main > a:hover, nav.main .has-submenu > a:hover { color: var(--accent); }
