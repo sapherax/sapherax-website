@@ -120,14 +120,14 @@ body.home .grid-3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 460px) { body.home .grid-5, body.home .grid-3 { grid-template-columns: 1fr; } body.home .card img { height: 180px; } }
 
 /* ===== Startseite Hero: gleiches Muster wie die Branchenseiten ===== */
-.hero-home::before { -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.6) 14%, #000 30%), linear-gradient(50deg, transparent 0, transparent 8%, rgba(0,0,0,.65) 28%, #000 46%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.6) 14%, #000 30%), linear-gradient(50deg, transparent 0, transparent 8%, rgba(0,0,0,.65) 28%, #000 46%); mask-composite: intersect; }
+.hero-home::before { background-size: auto calc(100% - 88px); background-position: 38% bottom; -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.6) 14%, #000 30%), linear-gradient(50deg, transparent 0, transparent 8%, rgba(0,0,0,.65) 28%, #000 46%), linear-gradient(to bottom, transparent 0, transparent 58px, #000 104px); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.6) 14%, #000 30%), linear-gradient(50deg, transparent 0, transparent 8%, rgba(0,0,0,.65) 28%, #000 46%), linear-gradient(to bottom, transparent 0, transparent 58px, #000 104px); mask-composite: intersect, intersect; }
 .hero-home .hero-postcard-tag { position: absolute; right: 2.5vw; top: clamp(70px, 6vw, 110px); width: clamp(110px, 11vw, 220px); max-width: none; height: auto; z-index: 2; }
 .hero-home .wrap { position: relative; z-index: 1; }
 .hero-home .wrap > h1 { max-width: 9em; }
 .hero-home .wrap > p.lead { max-width: 340px; }
 @media (max-width: 900px) {
-  .hero-home::before { aspect-ratio: 2400 / 933; -webkit-mask-image: none; mask-image: none; background-size: 100% 100%; }
-  .hero-home .hero-postcard-tag { top: 14px; right: 14px; width: 96px; }
+  .hero-home::before { height: auto; aspect-ratio: 18 / 10; -webkit-mask-image: none; mask-image: none; background-size: auto 100%; background-position: 50% center; }
+  .hero-home .hero-postcard-tag { top: 74px; right: 14px; width: 96px; }
   .hero-home .wrap { margin-top: 0; padding-top: 24px !important; }
 }
 
@@ -137,7 +137,19 @@ body { background: var(--bg); }
 section.alt, body.home section.alt { background: var(--bg); border-top: 1px solid var(--silver-line); border-bottom: 1px solid var(--silver-line); }
 .card, .step, .faq-item, form.quiz { background: #fff; }
 
-header.site { background: linear-gradient(180deg, #DCDCDC 0%, var(--silver-bar) 100%); border-bottom: 1px solid rgba(16,35,59,.14); -webkit-backdrop-filter: none; backdrop-filter: none; }
 header.site .btn-primary { box-shadow: 0 4px 14px rgba(12,75,140,.25); }
 nav.main > a, nav.main .has-submenu > a { color: var(--navy); }
 nav.main > a.active, nav.main .has-submenu > a.active, nav.main > a:hover, nav.main .has-submenu > a:hover { color: var(--accent); }
+
+/* ===== Schwebende Menueleiste ===== */
+header.site { position: sticky; top: 0; height: 0; background: transparent; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; z-index: 30; overflow: visible; }
+header.site .wrap { position: relative; top: 12px; box-sizing: border-box; width: min(1180px, calc(100% - 32px)); max-width: none; margin: 0 auto; height: 64px; padding: 0 10px 0 20px; background: rgba(218,218,218,.9); -webkit-backdrop-filter: saturate(1.2) blur(14px); backdrop-filter: saturate(1.2) blur(14px); border-radius: 999px; box-shadow: 0 10px 30px rgba(16,35,59,.22), inset 0 0 0 1px rgba(255,255,255,.55); }
+header.site .btn-primary { padding: 11px 22px; }
+.hero.hero-split, .hero.hero-compact { padding-top: 88px; }
+header.site + section:not(.hero) { padding-top: 112px; }
+@media (max-width: 900px) {
+  header.site .wrap { top: 8px; height: 56px; width: calc(100% - 20px); border-radius: 22px; padding: 0 8px 0 14px; }
+  nav.main { top: calc(100% + 8px) !important; left: 0 !important; right: 0 !important; border-radius: 18px; border: 0 !important; box-shadow: 0 14px 36px rgba(16,35,59,.25); max-height: calc(100vh - 90px) !important; }
+  .hero.hero-split, .hero.hero-compact { padding-top: 64px; }
+  header.site + section:not(.hero) { padding-top: 88px; }
+}
