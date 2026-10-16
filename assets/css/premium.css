@@ -131,19 +131,13 @@ body.home .grid-3 { grid-template-columns: repeat(3, 1fr); }
   .hero-home .wrap { margin-top: 0; padding-top: 24px !important; }
 }
 
-/* ===== Silbergrau als Seitenfarbe, dunkle Menueleiste ===== */
-:root { --bg: #E6E9ED; --silver-line: rgba(16,35,59,.07); }
+/* ===== Silbergrau (neutral) als Seitenfarbe, Menueleiste in hellem Silber ===== */
+:root { --bg: #E3E4E6; --silver-line: rgba(16,35,59,.08); --silver-bar: #D3D5D9; }
 body { background: var(--bg); }
 section.alt, body.home section.alt { background: var(--bg); border-top: 1px solid var(--silver-line); border-bottom: 1px solid var(--silver-line); }
 .card, .step, .faq-item, form.quiz { background: #fff; }
 
-header.site { background: var(--navy); border-bottom: 1px solid rgba(255,255,255,.08); -webkit-backdrop-filter: none; backdrop-filter: none; }
-header.site .logo-word { filter: brightness(0) invert(1); }
-header.site .btn-primary { background: #fff; color: var(--navy); border-color: #fff; box-shadow: none; }
-header.site .btn-primary:hover { background: #DCE7F3; transform: none; }
-.nav-toggle { color: #fff; border-color: rgba(255,255,255,.4); }
-@media (min-width: 901px) {
-  nav.main > a, nav.main .has-submenu > a { color: #DCE7F3; }
-  nav.main > a.active, nav.main .has-submenu > a.active, nav.main > a:hover, nav.main .has-submenu > a:hover { color: #fff; }
-}
-header.site .logo-icon { box-shadow: 0 0 0 1px rgba(255,255,255,.28); }
+header.site { background: linear-gradient(180deg, #DADCDF 0%, var(--silver-bar) 100%); border-bottom: 1px solid rgba(16,35,59,.14); -webkit-backdrop-filter: none; backdrop-filter: none; }
+header.site .btn-primary { box-shadow: 0 4px 14px rgba(12,75,140,.25); }
+nav.main > a, nav.main .has-submenu > a { color: var(--navy); }
+nav.main > a.active, nav.main .has-submenu > a.active, nav.main > a:hover, nav.main .has-submenu > a:hover { color: var(--accent); }
