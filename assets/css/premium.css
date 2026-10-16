@@ -1,0 +1,55 @@
+/* SapheraX Premium Design, Phase 1. Wird nach style.css geladen und ueberschreibt nur gezielt. */
+:root {
+  --navy: #0B2545;
+  --navy-2: #123A6B;
+  --radius-lg: 18px;
+  --shadow-card: 0 1px 2px rgba(16,35,59,.05), 0 12px 32px rgba(16,35,59,.08);
+  --shadow-card-hover: 0 2px 4px rgba(16,35,59,.06), 0 18px 44px rgba(16,35,59,.14);
+}
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+/* Typografie */
+h1, h2, h3 { letter-spacing: -0.015em; }
+h2 { line-height: 1.2; }
+.prose p, .prose li { line-height: 1.75; }
+
+/* Header */
+header.site { background: rgba(255,255,255,.92); -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid rgba(16,35,59,.08); }
+header.site .wrap { height: 80px; }
+nav.main { gap: 28px; }
+nav.main a { font-size: 15px; }
+
+/* Buttons als Pillen */
+.btn { border-radius: 999px; padding: 13px 26px; font-size: 15px; letter-spacing: .005em; transition: background .18s ease, box-shadow .18s ease, transform .18s ease, color .18s ease; }
+.btn-primary { box-shadow: 0 6px 18px rgba(12,75,140,.28); }
+.btn-primary:hover { box-shadow: 0 10px 26px rgba(12,75,140,.36); transform: translateY(-1px); }
+.btn:focus-visible { outline: 3px solid #7FB0E6; outline-offset: 3px; }
+
+/* Karten */
+.card, .product-card, .grid > .card { border-radius: var(--radius-lg); box-shadow: var(--shadow-card); border-color: transparent; transition: box-shadow .2s ease, transform .2s ease; }
+.card:hover, .product-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+
+/* Geteilter Hero: Text links auf ruhiger Flaeche, Foto rechts, weicher Uebergang per CSS */
+.hero-split { position: relative; overflow: hidden; background: linear-gradient(115deg, var(--navy) 0%, var(--navy) 42%, var(--navy-2) 100%); }
+.hero-split::before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 62%; background-image: var(--hero-img); background-size: var(--hero-size, cover); background-position: var(--hero-pos, center); background-repeat: no-repeat; -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.55) 18%, #000 42%); mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.55) 18%, #000 42%); }
+.hero-split .wrap { background: none !important; min-height: clamp(460px, 44vw, 600px); padding: 64px 24px; }
+.hero-split .wrap::before { display: none; }
+.hero-split .wrap > * { width: auto; max-width: 540px; }
+.hero-split .eyebrow { color: #9CC3EE; letter-spacing: .08em; }
+.hero-split h1 { color: #fff; font-size: clamp(30px, 3vw, 44px); font-weight: 700; line-height: 1.12; letter-spacing: -0.022em; max-width: 540px; margin-bottom: 20px; }
+.hero-split p.lead { color: #DCE7F3; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.55; max-width: 440px; margin-bottom: 32px; }
+.hero-split .btn-primary { background: #fff; color: var(--navy); border-color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.28); }
+.hero-split .btn-primary:hover { background: #E7EFF8; }
+.hero-split .btn-secondary { border-color: rgba(255,255,255,.7); color: #fff; }
+.hero-split .btn-secondary:hover { background: rgba(255,255,255,.12); }
+
+@media (max-width: 900px) {
+  header.site .wrap { height: 68px; }
+  .hero-split { display: flex; flex-direction: column; background: var(--navy); }
+  .hero-split::before { position: relative; order: -1; width: 100%; height: auto; aspect-ratio: 16 / 10; -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); }
+  .hero-split .wrap { min-height: 0; padding: 4px 20px 40px !important; margin-top: -28px; }
+  .hero-split .wrap > * { max-width: none; }
+  .hero-split h1 { font-size: 28px; }
+  .hero-split p.lead { font-size: 16px; }
+  .hero-split .hero-actions .btn { font-size: 14px; padding: 12px 20px; }
+}

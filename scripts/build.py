@@ -125,6 +125,8 @@ SCRIPTS_RE = re.compile(
 )
 PROTO_BANNER_RE = re.compile(r'[ \t]*<div class="proto-banner">.*?</div>\n?', re.DOTALL)
 CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*">')
+STYLE_RE = re.compile(r'(<link rel="stylesheet" href="((?:\.\./)*)assets/css/style\.css[^"]*">)(?:\n<link rel="stylesheet" href="(?:\.\./)*assets/css/premium\.css[^"]*">)?')
+PREMIUM_VERSION = "20261016"
 
 
 def canonical_html(path_parts):
@@ -156,6 +158,7 @@ def process(path, check_only):
     content, n_footer = FOOTER_RE.subn(lambda m: footer_html(rel), content, count=1)
     if n_header and n_footer:
         content, n_scripts = SCRIPTS_RE.subn(lambda m: scripts_html(rel, slug), content, count=1)
+    content = STYLE_RE.sub(lambda m: m.group(1) + '\n<link rel="stylesheet" href="' + m.group(2) + 'assets/css/premium.css?v=' + PREMIUM_VERSION + '">', content, count=1)
     content = PROTO_BANNER_RE.sub("", content)
     content = CANONICAL_RE.sub(lambda m: canonical_html(parts[:-1]), content, count=1)
 
