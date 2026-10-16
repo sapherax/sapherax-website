@@ -15,8 +15,8 @@ h1, h2 { font-weight: 800; }
 h3 { font-weight: 700; }
 nav.main a, .btn { font-family: var(--font-body); }
 :root {
-  --navy: #0B2545;
-  --navy-2: #123A6B;
+  --navy: #11233B;
+  --navy-2: #17335A;
   --radius-lg: 18px;
   --shadow-card: 0 1px 2px rgba(16,35,59,.05), 0 12px 32px rgba(16,35,59,.08);
   --shadow-card-hover: 0 2px 4px rgba(16,35,59,.06), 0 18px 44px rgba(16,35,59,.14);
@@ -81,7 +81,7 @@ nav.main a { font-size: 15px; }
 
 /* ===== Phase 2: Startseite ===== */
 body.home section:not(.hero):not(.postcard-cta):not(.trust-bar) { padding: 88px 0; }
-body.home .postcard-cta { padding: 0 0 36px; background: linear-gradient(115deg, var(--navy) 0%, var(--navy-2) 100%); }
+body.home .postcard-cta { padding: 0 0 36px; background: var(--navy); }
 body.home .postcard-cta .wrap { padding-top: 12px; }
 body.home .postcard-cta .btn-primary { background: #fff; color: var(--navy); border-color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.28); }
 body.home .postcard-cta .btn-secondary { border-color: rgba(255,255,255,.7); color: #fff; }
@@ -136,31 +136,16 @@ body.home .grid-3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 700px) { body.home .grid-5, body.home .grid-3 { grid-template-columns: 1fr 1fr; gap: 14px; } body.home .card img { height: 130px; } body.home .card h3, body.home .card p { padding: 0 14px; } body.home .grid-2 > .card img { height: 180px; } }
 @media (max-width: 460px) { body.home .grid-5, body.home .grid-3 { grid-template-columns: 1fr; } body.home .card img { height: 180px; } }
 
-/* ===== Startseite Hero: mehr Luft, grosse Headline, Buttons im Hero ===== */
-.hero-bg.hero-postcard {
-  --hp-bg: linear-gradient(to right, #bfc3c6 0, #cccecd 10%, #dddddd 25%, #eaeaea 50%, #dcdcdc 75%, #cecfd1 90%, #c5c6c8 100%);
-  aspect-ratio: auto; position: relative; overflow: hidden;
-  min-height: calc(38.875vw + clamp(150px, 13vw, 200px));
-  background-color: #dcdcdc; background-repeat: no-repeat; background-size: 100% auto; background-position: center bottom;
-}
-.hero-bg.hero-postcard::before { content: ""; position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: var(--hp-bg); z-index: 0; }
-.hero-bg.hero-postcard::after { content: ""; position: absolute; left: 0; right: 0; bottom: calc(38.875vw - 1px); height: 0; z-index: 0; }
-.hero-bg.hero-postcard { background-image: none !important; }
-.hero-bg.hero-postcard .hp-img { display: none; }
-.hero-bg.hero-postcard .wrap { padding-top: clamp(40px, 5vw, 84px); padding-bottom: clamp(24px, 3vw, 40px); }
-.hero-bg.hero-postcard .eyebrow { font-size: clamp(11px, .9vw, 14px); letter-spacing: .1em; max-width: none; margin-bottom: 14px; }
-.hero-bg.hero-postcard h1 { font-family: var(--font-head); font-size: clamp(34px, 4vw, 58px); font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; max-width: min(11em, 640px); color: var(--navy); margin: 0 0 18px; }
-.hero-bg.hero-postcard p.lead { font-size: clamp(16px, 1.5vw, 22px); max-width: 30em; color: #3A4A5E; margin-bottom: 26px; }
-.hero-bg.hero-postcard .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero-bg.hero-postcard .btn-secondary { border-color: var(--navy); color: var(--navy); background: rgba(255,255,255,.6); }
-.hero-bg.hero-postcard .btn-secondary:hover { background: #fff; }
-.hero-postcard-img { position: absolute; left: 0; right: 0; bottom: 0; height: 38.875vw; z-index: 0; background-size: 100% 100%; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%); mask-image: linear-gradient(to bottom, transparent 0, #000 14%); pointer-events: none; }
-.hero-bg.hero-postcard .wrap { z-index: 2; }
-.hero-postcard-tag { z-index: 3; }
-@media (max-width: 700px) {
-  .hero-bg.hero-postcard { min-height: 0; padding-bottom: 38.875vw; }
-  .hero-bg.hero-postcard .wrap { padding-top: 28px; }
-  .hero-postcard-tag { position: relative; top: auto; right: auto; display: block; width: 104px; margin: 14px 20px -6px auto; }
-  .hero-bg.hero-postcard h1 { font-size: 32px; max-width: 11em; }
-  .hero-bg.hero-postcard .btn { font-size: 14px; padding: 12px 18px; }
+/* ===== Startseite Hero: gleiches Muster wie die Branchenseiten ===== */
+.hero-home { background: var(--navy); }
+.hero-home::before { top: auto; height: calc(var(--hw, 72) * .01 * 38.875vw); -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.5) 14%, #000 34%), linear-gradient(to bottom, transparent 0, #000 14%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0, rgba(0,0,0,.5) 14%, #000 34%), linear-gradient(to bottom, transparent 0, #000 14%); mask-composite: intersect; }
+.hero-home .wrap { min-height: max(calc(var(--hw, 72) * .01 * 38.875vw), 440px); padding-top: 48px; padding-bottom: 48px; }
+.hero-home .hero-postcard-tag { position: absolute; right: 2.5vw; top: clamp(70px, 6vw, 110px); width: clamp(110px, 12vw, 230px); max-width: none; height: auto; z-index: 2; }
+.hero-home .wrap { position: relative; z-index: 1; }
+.hero-home .wrap > h1 { max-width: 8.6em; }
+.hero-home .wrap > p.lead { max-width: 340px; }
+@media (max-width: 900px) {
+  .hero-home::before { height: auto; aspect-ratio: 2400 / 933; -webkit-mask-image: none; mask-image: none; background-size: 100% 100%; }
+  .hero-home .hero-postcard-tag { top: 14px; right: 14px; width: 96px; }
+  .hero-home .wrap { min-height: 0; margin-top: 0; padding-top: 24px !important; }
 }
