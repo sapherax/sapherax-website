@@ -179,3 +179,27 @@ footer.site .legal-links a:hover { opacity: 1; }
   footer.site .footer-grid { grid-template-columns: 1fr; }
   footer.site .legal { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
+
+/* Vorschaubilder: Roboter mittig, einheitliches Seitenverhältnis (per object-view-box zugeschnitten) */
+img.hero-preview { aspect-ratio: 3 / 2; height: auto !important; object-fit: cover; }
+img.hero-preview[src*="dinerbot-t3/hero.jpg"] { object-view-box: inset(15.0% 5.5% 0.0% 9.5%); }
+img.hero-preview[src*="dinerbot-t8/hero.jpg"] { object-view-box: inset(0% 3.0% 8.0% 5.0%); }
+img.hero-preview[src*="dinerbot-t9/hero.jpg"] { object-view-box: inset(12.0% 20.0% 8.0% 0%); }
+img.hero-preview[src*="dinerbot-t10/hero.jpg"] { object-view-box: inset(12.5% 0.0% 2.5% 15.0%); }
+img.hero-preview[src*="dinerbot-t11/hero.jpg"] { object-view-box: inset(32.2% 29.6% 4.2% 23.6%); }
+img.hero-preview[src*="kleenbot-c20/hero.jpg"] { object-view-box: inset(22.1% 4.1% 2.1% 20.1%); }
+img.hero-preview[src*="kleenbot-c30/hero.jpg"] { object-view-box: inset(4.5% 9.1% 4.5% 0%); }
+img.hero-preview[src*="kleenbot-c40/hero.jpg"] { object-view-box: inset(11.3% 16.0% 5.3% 34.0%); }
+img.hero-preview[src*="kleenbot-c55/hero.jpg"] { object-view-box: inset(8.0% 0.0% 4.0% 1.0%); }
+img.hero-preview[src*="butlerbot-w3/hero.jpg"] { object-view-box: inset(9.1% 1.5% 0.0% 7.5%); }
+img.hero-preview[src*="transportroboter-s100/hero.jpg"] { object-view-box: inset(5.8% 3.8% 7.8% 9.8%); }
+img.hero-preview[src*="transportroboter-s300/hero.jpg"] { object-view-box: inset(40.0% 8.0% 0.0% 38.0%); }
+
+/* Schluss-Handlungsaufruf auf allen Unterseiten im Stil der Startseite */
+.cta-band { background: linear-gradient(115deg, var(--navy) 0%, var(--navy-2) 100%); border-radius: var(--radius-lg, 24px); padding: 64px 32px; min-height: 0; box-shadow: var(--shadow-card); }
+.cta-band h2 { color: #fff; max-width: 700px; margin: 0 auto 14px; font-size: clamp(26px, 2.6vw, 36px); }
+.cta-band h2::after { display: none !important; }
+.cta-band p { color: #DCE7F3; font-size: 17px; max-width: 580px; margin: 0 auto 28px; }
+.cta-band .btn-secondary, .cta-band .btn-primary { background: #fff; color: var(--navy); border-color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.28); }
+.cta-band .btn-secondary:hover, .cta-band .btn-primary:hover { background: #EAF1F8; }
+@media (max-width: 700px) { .cta-band { padding: 44px 22px; } }
