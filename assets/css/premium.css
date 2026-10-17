@@ -150,6 +150,8 @@ header.site + section:not(.hero) { padding-top: 112px; }
 @media (max-width: 900px) {
   header.site .wrap { top: 8px; height: 56px; width: calc(100% - 20px); border-radius: 22px; padding: 0 8px 0 14px; }
   nav.main { top: calc(100% + 8px) !important; left: 0 !important; right: 0 !important; border-radius: 18px; border: 0 !important; box-shadow: 0 14px 36px rgba(16,35,59,.25); max-height: calc(100vh - 90px) !important; }
-  .hero.hero-split, .hero.hero-compact { padding-top: 64px; }
+  .hero.hero-compact { padding-top: 64px; }
+  .hero.hero-split { padding-top: 0; }
+  .hero-split::before { box-sizing: content-box; padding-top: 60px; }
   header.site + section:not(.hero) { padding-top: 88px; }
 }
