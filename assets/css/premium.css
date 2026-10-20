@@ -279,3 +279,8 @@ body section.trust-bar { padding: 28px 0; background: #fff; border-bottom: 1px s
 .mk-card a { margin-top: auto; font-weight: 600; font-size: 15px; }
 .mk-more { margin: 44px 0 18px; text-align: center; }
 .mk-cta { text-align: center; margin: 36px 0 0; }
+
+/* Phase 3: Einsatzbereiche-Template */
+.systems-block .sys-group { font-size: 20px; margin: 36px 0 14px; padding-left: 14px; border-left: 4px solid var(--accent); }
+.systems-block .section-lead { margin-bottom: 8px; }
+.ref-one { max-width: 520px; margin: 28px auto 0; }

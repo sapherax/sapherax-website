@@ -147,7 +147,7 @@ HERO_RE = re.compile(r'(<section class="hero[^"]*"[^>]*>\n)(?:[ \t]*<a href="[^"
 PROTO_BANNER_RE = re.compile(r'[ \t]*<div class="proto-banner">.*?</div>\n?', re.DOTALL)
 CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*">')
 STYLE_RE = re.compile(r'(<link rel="stylesheet" href="((?:\.\./)*)assets/css/style\.css[^"]*">)(?:\n<link rel="stylesheet" href="(?:\.\./)*assets/css/premium\.css[^"]*">)?')
-PREMIUM_VERSION = "20261020j"
+PREMIUM_VERSION = "20261020l"
 
 
 def canonical_html(path_parts):
