@@ -21,6 +21,7 @@ To change the header or footer site-wide: edit HEADER_TMPL / FOOTER_TMPL
 below, then run this script once. Do NOT hand-edit <header>/<footer> blocks
 inside individual index.html files - they will be overwritten on the next run.
 """
+import json
 import os
 import re
 import sys
@@ -147,7 +148,40 @@ HERO_RE = re.compile(r'(<section class="hero[^"]*"[^>]*>\n)(?:[ \t]*<a href="[^"
 PROTO_BANNER_RE = re.compile(r'[ \t]*<div class="proto-banner">.*?</div>\n?', re.DOTALL)
 CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*">')
 STYLE_RE = re.compile(r'(<link rel="stylesheet" href="((?:\.\./)*)assets/css/style\.css[^"]*">)(?:\n<link rel="stylesheet" href="(?:\.\./)*assets/css/premium\.css[^"]*">)?')
-PREMIUM_VERSION = "20261020n"
+PREMIUM_VERSION = "20261020o"
+
+# Preise auf Produktseiten: erst nach Freigabe durch Jochen auf True setzen.
+# Die Preisdatei liegt bewusst ausserhalb des Repos (Ordner "Preisliste fuer Webshop").
+PRICES_LIVE = False
+PRICES_FILE = os.path.join(REPO, "..", "..", "Preisliste f\u00fcr Webshop", "prices.json")
+PRICE_RE = re.compile(r'<!--price-->.*?<!--/price-->', re.S)
+
+
+def fmt_eur(v):
+    v = round(v + 1e-9, 2)
+    s = f"{v:,.0f}" if abs(v - round(v)) < 0.005 else f"{v:,.2f}"
+    return s.replace(",", "X").replace(".", ",").replace("X", ".") + "\u00a0\u20ac"
+
+
+MWST = 1.19
+
+
+def price_html(slug):
+    if not PRICES_LIVE or not os.path.exists(PRICES_FILE):
+        return "<!--price--><!--/price-->"
+    with open(PRICES_FILE, encoding="utf-8") as f:
+        p = json.load(f)["produkte"].get(slug)
+    if not p:
+        return "<!--price--><!--/price-->"
+    if p.get("angebot"):
+        label, net = "Angebotspreis", p["angebot"]
+    else:
+        label, net = "Preis", p["netto"]
+    lnet = p["leasing_48"]
+    return ('<!--price--><div class="price-block">'
+            f'<div class="price-line"><span class="price-label">{label} inkl. MwSt.</span><span class="price-value">{fmt_eur(net * MWST)}</span><span class="price-net">{fmt_eur(net)} netto</span></div>'
+            f'<div class="price-line"><span class="price-label">Leasing ab, inkl. MwSt.</span><span class="price-value">{fmt_eur(lnet * MWST)}</span><span class="price-net">{fmt_eur(lnet)} netto pro Monat, 48 Monate</span></div>'
+            '</div><!--/price-->')
 
 
 def canonical_html(path_parts):
@@ -182,6 +216,8 @@ def process(path, check_only):
     content = STYLE_RE.sub(lambda m: m.group(1) + '\n<link rel="stylesheet" href="' + m.group(2) + 'assets/css/premium.css?v=' + PREMIUM_VERSION + '">', content, count=1)
     content = HERO_RE.sub(lambda m: m.group(1) + '  <a href="' + rel + 'index.html" class="hero-brand"><img src="' + rel + 'assets/img/logo/wordmark-original.png" alt="SapheraX" width="1607" height="508"></a>\n', content, count=1)
     content = PROTO_BANNER_RE.sub("", content)
+    if "<!--price-->" in content:
+        content = PRICE_RE.sub(lambda m: price_html(slug), content, count=1)
     content = CANONICAL_RE.sub(lambda m: canonical_html(parts[:-1]), content, count=1)
 
     if content != original:

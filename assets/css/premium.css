@@ -298,9 +298,9 @@ body section.buybox + section { padding-top: 40px; }
 .price-block[hidden] { display: none; }
 .price-block { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--silver-line); display: grid; gap: 8px; }
 .price-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; }
-.price-label { font-size: 14px; color: var(--text-secondary); min-width: 90px; }
+.price-label { font-size: 14px; color: var(--text-secondary); min-width: 190px; }
 .price-value { font-family: var(--font-head); font-size: 26px; font-weight: 800; color: var(--navy); }
-.price-sub { font-size: 13px; color: var(--text-secondary); }
+.price-sub, .price-net { font-size: 13px; color: var(--text-secondary); }
 .spec-acc > summary { list-style: none; cursor: default; }
 .spec-acc > summary::-webkit-details-marker { display: none; }
 .spec-acc > summary h2 { margin: 0 0 18px; }
