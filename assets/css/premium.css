@@ -337,3 +337,20 @@ body section.buybox + section { padding-top: 40px; }
 .product-page .download-list a.btn:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
 .product-page section.alt > .wrap > div[style*="display:grid"] > .grid-2 { background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: 24px; }
 .product-page .faq-item { max-width: 900px; margin-left: auto; margin-right: auto; margin-bottom: 14px; border: 0; border-radius: var(--radius); box-shadow: var(--shadow-card); }
+
+/* Phase 4: Bilder und Spezifikationen nebeneinander, Einsatzbereiche */
+.product-page .pd-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; align-items: start; }
+.product-page .pd-gallery .product-gallery { max-width: none; }
+.product-page .pd-gallery .gallery-main img { height: auto; aspect-ratio: 1 / 1; object-fit: contain; padding: 10px; margin: 0 auto; display: block; }
+.product-page .pd-gallery .gallery-thumbs { justify-content: center; gap: 12px; }
+.product-page .pd-gallery .gallery-thumbs img { width: 84px; height: 84px; object-fit: contain; padding: 6px; background: #fff; box-shadow: var(--shadow-card); }
+.product-page .pd-specs .spec-acc { max-width: none; }
+.product-page .pd-specs .download-list { max-width: none; grid-template-columns: 1fr 1fr; }
+.product-page .pd-specs h2 { text-align: left; }
+.product-page .pd-specs h2.center::after, .product-page .pd-gallery h2.center::after { margin-left: auto; margin-right: auto; }
+.product-page .pd-gallery h2, .product-page .pd-specs h2 { text-align: center; }
+.product-page .ea-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 340px)); justify-content: center; }
+@media (max-width: 900px) {
+  .product-page .pd-grid { grid-template-columns: 1fr; gap: 36px; }
+  .product-page .pd-specs .download-list { grid-template-columns: 1fr; }
+}
