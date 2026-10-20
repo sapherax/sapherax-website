@@ -222,7 +222,8 @@ def process(path, check_only):
     content = STYLE_RE.sub(lambda m: m.group(1) + '\n<link rel="stylesheet" href="' + m.group(2) + 'assets/css/premium.css?v=' + PREMIUM_VERSION + '">', content, count=1)
     content = HERO_RE.sub(lambda m: m.group(1) + '  <a href="' + rel + 'index.html" class="hero-brand"><img src="' + rel + 'assets/img/logo/wordmark-original.png" alt="SapheraX" width="1607" height="508"></a>\n', content, count=1)
     content = PROTO_BANNER_RE.sub("", content)
-    if "<!--price-->" in content:
+    # Fehlt die Preisdatei (z. B. im GitHub-Build), bleibt der bereits eingetragene Preisblock unveraendert.
+    if "<!--price-->" in content and (not PRICES_LIVE or os.path.exists(PRICES_FILE)):
         content = PRICE_RE.sub(lambda m: price_html(slug), content, count=1)
     content = CANONICAL_RE.sub(lambda m: canonical_html(parts[:-1]), content, count=1)
 
