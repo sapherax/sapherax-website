@@ -354,3 +354,6 @@ body section.buybox + section { padding-top: 40px; }
   .product-page .pd-grid { grid-template-columns: 1fr; gap: 36px; }
   .product-page .pd-specs .download-list { grid-template-columns: 1fr; }
 }
+.product-page .ea-more { margin: 44px 0 8px; text-align: center; }
+.product-page .ea-more + .section-lead { margin-bottom: 20px; }
+.product-page #einsatzbereiche .area-list { justify-content: center; }
