@@ -65,6 +65,7 @@ def header_html(rel, active):
         f'    <a href="{rel}index.html" class="logo logo-mark"><img src="{rel}assets/img/logo/icon-96.png" alt="" class="logo-icon"><img src="{rel}assets/img/logo/wordmark.svg" alt="SapheraX" class="logo-word"></a>\n'
         '<button class="nav-toggle" aria-label="Menü öffnen" onclick="document.querySelector(\'nav.main\').classList.toggle(\'open\')">&#9776;</button>\n'
         '    <nav class="main">\n'
+        f'      <a href="{rel}index.html"{cls("home")}>Home</a>\n'
         f'      <div class="has-submenu"><a href="{rel}einsatzbereiche-1/index.html"{cls("einsatzbereiche")}>Einsatzbereiche</a><div class="submenu"><a href="{rel}einsatzbereiche-1/gastronomie/index.html">Gastronomie</a><a href="{rel}einsatzbereiche-1/hotellerie/index.html">Hospitality / Hotels</a><a href="{rel}einsatzbereiche-1/handel/index.html">Handel &amp; Marketing</a><a href="{rel}einsatzbereiche-1/pflege/index.html">Pflege &amp; Betreuung</a><a href="{rel}einsatzbereiche-1/reinigung/index.html">Reinigung &amp; Hygiene</a><a href="{rel}einsatzbereiche-1/transportieren/index.html">Transport &amp; Logistik</a></div></div>\n'
         f'      <div class="has-submenu"><a href="{rel}systeme-and-loesungen/index.html"{cls("systeme")}>Systeme &amp; Lösungen</a><div class="submenu">'
         f'<span class="submenu-label">Liefern &amp; Abräumen</span><a href="{rel}systeme-and-loesungen/dinerbot-t3/index.html">DINERBOT T3</a><a href="{rel}systeme-and-loesungen/dinerbot-t8/index.html">DINERBOT T8</a><a href="{rel}systeme-and-loesungen/dinerbot-t9/index.html">DINERBOT T9</a>'
@@ -145,7 +146,7 @@ SCRIPTS_RE = re.compile(
 PROTO_BANNER_RE = re.compile(r'[ \t]*<div class="proto-banner">.*?</div>\n?', re.DOTALL)
 CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*">')
 STYLE_RE = re.compile(r'(<link rel="stylesheet" href="((?:\.\./)*)assets/css/style\.css[^"]*">)(?:\n<link rel="stylesheet" href="(?:\.\./)*assets/css/premium\.css[^"]*">)?')
-PREMIUM_VERSION = "20261016"
+PREMIUM_VERSION = "20261020"
 
 
 def canonical_html(path_parts):

@@ -203,3 +203,17 @@ img.hero-preview[src*="transportroboter-s300/hero.jpg"] { object-view-box: inset
 .cta-band .btn-secondary, .cta-band .btn-primary { background: #fff; color: var(--navy); border-color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.28); }
 .cta-band .btn-secondary:hover, .cta-band .btn-primary:hover { background: #EAF1F8; }
 @media (max-width: 700px) { .cta-band { padding: 44px 22px; } }
+
+/* Menüleiste: nur Bildmarke, Wortmarke entfällt in der Leiste */
+header.site .logo-mark .logo-word { display: none; }
+header.site .logo-mark .logo-icon { width: 40px; height: 40px; }
+header.site nav.main > a:first-child { margin-left: 0; }
+
+/* Handy: Logo, Button "Beratung anfragen" und runder Menüknopf, wie in einer App-Leiste */
+@media (max-width: 900px) {
+  header.site .wrap { display: flex; align-items: center; padding: 0 8px 0 10px; gap: 10px; }
+  header.site .logo-mark { order: 1; }
+  header.site .btn-primary { display: inline-block !important; order: 2; margin-right: auto; padding: 10px 16px; font-size: 13px; white-space: nowrap; }
+  header.site .nav-toggle { order: 3; width: 42px; height: 42px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.7); color: var(--navy); font-size: 20px; display: flex; align-items: center; justify-content: center; }
+}
+@media (max-width: 360px) { header.site .btn-primary { padding: 9px 12px; font-size: 12px; } }
