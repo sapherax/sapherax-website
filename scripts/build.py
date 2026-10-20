@@ -148,7 +148,7 @@ HERO_RE = re.compile(r'(<section class="hero[^"]*"[^>]*>\n)(?:[ \t]*<a href="[^"
 PROTO_BANNER_RE = re.compile(r'[ \t]*<div class="proto-banner">.*?</div>\n?', re.DOTALL)
 CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*">')
 STYLE_RE = re.compile(r'(<link rel="stylesheet" href="((?:\.\./)*)assets/css/style\.css[^"]*">)(?:\n<link rel="stylesheet" href="(?:\.\./)*assets/css/premium\.css[^"]*">)?')
-PREMIUM_VERSION = "20261020o"
+PREMIUM_VERSION = "20261020p"
 
 # Preise auf Produktseiten: erst nach Freigabe durch Jochen auf True setzen.
 # Die Preisdatei liegt bewusst ausserhalb des Repos (Ordner "Preisliste fuer Webshop").
@@ -166,6 +166,16 @@ def fmt_eur(v):
 MWST = 1.19
 
 
+def _price_lines(p):
+    if p.get("angebot"):
+        label, net = "Angebotspreis", p["angebot"]
+    else:
+        label, net = "Preis", p["netto"]
+    lnet = p["leasing_48"]
+    return (f'<div class="price-line"><span class="price-label">{label} inkl. MwSt.</span><span class="price-value">{fmt_eur(net * MWST)}</span><span class="price-net">{fmt_eur(net)} netto</span></div>'
+            f'<div class="price-line"><span class="price-label">Leasing ab, inkl. MwSt.</span><span class="price-value">{fmt_eur(lnet * MWST)}</span><span class="price-net">{fmt_eur(lnet)} netto pro Monat, 48 Monate</span></div>')
+
+
 def price_html(slug):
     if not PRICES_LIVE or not os.path.exists(PRICES_FILE):
         return "<!--price--><!--/price-->"
@@ -173,15 +183,11 @@ def price_html(slug):
         p = json.load(f)["produkte"].get(slug)
     if not p:
         return "<!--price--><!--/price-->"
-    if p.get("angebot"):
-        label, net = "Angebotspreis", p["angebot"]
+    if p.get("varianten"):
+        inner = "".join(f'<div class="price-variant"><div class="price-variant-title">{v["name"]}</div>{_price_lines(v)}</div>' for v in p["varianten"])
     else:
-        label, net = "Preis", p["netto"]
-    lnet = p["leasing_48"]
-    return ('<!--price--><div class="price-block">'
-            f'<div class="price-line"><span class="price-label">{label} inkl. MwSt.</span><span class="price-value">{fmt_eur(net * MWST)}</span><span class="price-net">{fmt_eur(net)} netto</span></div>'
-            f'<div class="price-line"><span class="price-label">Leasing ab, inkl. MwSt.</span><span class="price-value">{fmt_eur(lnet * MWST)}</span><span class="price-net">{fmt_eur(lnet)} netto pro Monat, 48 Monate</span></div>'
-            '</div><!--/price-->')
+        inner = _price_lines(p)
+    return '<!--price--><div class="price-block">' + inner + '</div><!--/price-->'
 
 
 def canonical_html(path_parts):

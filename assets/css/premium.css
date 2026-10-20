@@ -312,3 +312,6 @@ body section.buybox + section { padding-top: 40px; }
   .spec-acc[open] > summary::after { content: "\2212"; }
   .spec-acc[open] > summary { margin-bottom: 16px; }
 }
+.price-variant { display: grid; gap: 8px; padding: 12px 0; border-top: 1px dashed var(--silver-line); }
+.price-variant:first-child { border-top: 0; padding-top: 0; }
+.price-variant-title { font-weight: 700; color: var(--navy); font-size: 15px; }
