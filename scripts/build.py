@@ -147,7 +147,7 @@ HERO_RE = re.compile(r'(<section class="hero[^"]*"[^>]*>\n)(?:[ \t]*<a href="[^"
 PROTO_BANNER_RE = re.compile(r'[ \t]*<div class="proto-banner">.*?</div>\n?', re.DOTALL)
 CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*">')
 STYLE_RE = re.compile(r'(<link rel="stylesheet" href="((?:\.\./)*)assets/css/style\.css[^"]*">)(?:\n<link rel="stylesheet" href="(?:\.\./)*assets/css/premium\.css[^"]*">)?')
-PREMIUM_VERSION = "20261020d"
+PREMIUM_VERSION = "20261020f"
 
 
 def canonical_html(path_parts):
@@ -180,7 +180,7 @@ def process(path, check_only):
     if n_header and n_footer:
         content, n_scripts = SCRIPTS_RE.subn(lambda m: scripts_html(rel, slug), content, count=1)
     content = STYLE_RE.sub(lambda m: m.group(1) + '\n<link rel="stylesheet" href="' + m.group(2) + 'assets/css/premium.css?v=' + PREMIUM_VERSION + '">', content, count=1)
-    content = HERO_RE.sub(lambda m: m.group(1) + '  <a href="' + rel + 'index.html" class="hero-brand"><img src="' + rel + 'assets/img/logo/wordmark-hero.png" alt="SapheraX" width="170" height="34"></a>\n', content, count=1)
+    content = HERO_RE.sub(lambda m: m.group(1) + '  <a href="' + rel + 'index.html" class="hero-brand"><img src="' + rel + 'assets/img/logo/wordmark-original.png" alt="SapheraX" width="1607" height="508"></a>\n', content, count=1)
     content = PROTO_BANNER_RE.sub("", content)
     content = CANONICAL_RE.sub(lambda m: canonical_html(parts[:-1]), content, count=1)
 
