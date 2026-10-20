@@ -152,7 +152,7 @@ PREMIUM_VERSION = "20261020p"
 
 # Preise auf Produktseiten: erst nach Freigabe durch Jochen auf True setzen.
 # Die Preisdatei liegt bewusst ausserhalb des Repos (Ordner "Preisliste fuer Webshop").
-PRICES_LIVE = False
+PRICES_LIVE = True
 PRICES_FILE = os.path.join(REPO, "..", "..", "Preisliste f\u00fcr Webshop", "prices.json")
 PRICE_RE = re.compile(r'<!--price-->.*?<!--/price-->', re.S)
 
