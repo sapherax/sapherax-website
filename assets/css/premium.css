@@ -315,3 +315,25 @@ body section.buybox + section { padding-top: 40px; }
 .price-variant { display: grid; gap: 8px; padding: 12px 0; border-top: 1px dashed var(--silver-line); }
 .price-variant:first-child { border-top: 0; padding-top: 0; }
 .price-variant-title { font-weight: 700; color: var(--navy); font-size: 15px; }
+
+/* Phase 4: Produktseiten, Aufbau */
+.product-page section .section-lead { text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }
+.product-page .video-caption { text-align: center; margin-left: auto; margin-right: auto; }
+.product-page .grid-4 .card { padding: 26px 24px; border-top: 3px solid var(--accent); }
+.product-page .grid-4 .card h3 { font-size: 18px; margin-bottom: 8px; }
+.product-page .product-gallery { max-width: 760px; margin: 0 auto; }
+.product-page .gallery-main { border: 0; border-radius: var(--radius-lg); box-shadow: var(--shadow-card); background: #fff; }
+.product-page .gallery-main img { background: #fff; }
+.product-page .gallery-thumbs { justify-content: center; }
+.product-page .gallery-thumbs img { background: #fff; border-radius: 12px; }
+.product-page .spec-acc { max-width: 900px; margin: 0 auto; }
+.product-page table.specs { background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: 12px 28px; border-collapse: separate; border-spacing: 0; }
+.product-page table.specs td { padding: 13px 0; }
+.product-page table.specs tr:last-child td { border-bottom: 0; }
+.product-page .spec-acc + script + p, .product-page .spec-acc ~ p { text-align: center; }
+.product-page .download-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; max-width: 900px; margin: 24px auto 0; }
+.product-page .download-list a.btn { display: flex; align-items: center; gap: 14px; justify-content: flex-start; background: #fff; border: 0; border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: 18px 22px; color: var(--navy); text-align: left; }
+.product-page .download-list a.btn::before { content: "PDF"; flex: 0 0 auto; width: 46px; height: 46px; border-radius: 10px; background: #E7EFF8; color: var(--accent); font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+.product-page .download-list a.btn:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+.product-page section.alt > .wrap > div[style*="display:grid"] > .grid-2 { background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: 24px; }
+.product-page .faq-item { max-width: 900px; margin-left: auto; margin-right: auto; margin-bottom: 14px; border: 0; border-radius: var(--radius); box-shadow: var(--shadow-card); }
