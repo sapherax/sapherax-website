@@ -286,10 +286,9 @@ body section.trust-bar { padding: 28px 0; background: #fff; border-bottom: 1px s
 .ref-one { max-width: 520px; margin: 28px auto 0; }
 
 /* Phase 4: Produktseite, Kaufkasten und Spezifikationen */
-body section.buybox { padding: 0 0 48px; background: transparent; }
-body section.buybox + section { padding-top: 40px; }
+body section.buybox { padding: 56px 0; background: transparent; }
 .buybox .wrap { position: relative; z-index: 4; }
-.buybox-card { margin-top: -44px; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card-hover); padding: 32px 36px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
+.buybox-card { margin-top: 0; background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-card-hover); padding: 32px 36px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
 .buybox-card h2 { font-size: 24px; margin: 0 0 10px; }
 .buybox-card p { margin: 0 0 12px; color: var(--text-secondary); }
 .bb-actions { display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
@@ -305,7 +304,7 @@ body section.buybox + section { padding-top: 40px; }
 .spec-acc > summary::-webkit-details-marker { display: none; }
 .spec-acc > summary h2 { margin: 0 0 18px; }
 @media (max-width: 700px) {
-  .buybox-card { grid-template-columns: 1fr; padding: 24px 22px; margin-top: -28px; gap: 20px; }
+  .buybox-card { grid-template-columns: 1fr; padding: 24px 22px; margin-top: 0; gap: 20px; }
   .spec-acc > summary { cursor: pointer; background: #fff; border-radius: var(--radius); padding: 16px 20px; box-shadow: var(--shadow-card); display: flex; justify-content: space-between; align-items: center; }
   .spec-acc > summary h2 { margin: 0; font-size: 20px; }
   .spec-acc > summary::after { content: "+"; font-size: 24px; color: var(--accent); }
