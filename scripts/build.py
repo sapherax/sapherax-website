@@ -148,11 +148,11 @@ HERO_RE = re.compile(r'(<section class="hero[^"]*"[^>]*>\n)(?:[ \t]*<a href="[^"
 PROTO_BANNER_RE = re.compile(r'[ \t]*<div class="proto-banner">.*?</div>\n?', re.DOTALL)
 CANONICAL_RE = re.compile(r'<link rel="canonical" href="[^"]*">')
 STYLE_RE = re.compile(r'(<link rel="stylesheet" href="((?:\.\./)*)assets/css/style\.css[^"]*">)(?:\n<link rel="stylesheet" href="(?:\.\./)*assets/css/premium\.css[^"]*">)?')
-PREMIUM_VERSION = "20261021b"
+PREMIUM_VERSION = "20261102a"
 
 # Preise auf Produktseiten: erst nach Freigabe durch Jochen auf True setzen.
 # Die Preisdatei liegt bewusst ausserhalb des Repos (Ordner "Preisliste fuer Webshop").
-PRICES_LIVE = True
+PRICES_LIVE = False
 PRICES_FILE = os.path.join(REPO, "..", "..", "Preisliste f\u00fcr Webshop", "prices.json")
 PRICE_RE = re.compile(r'<!--price-->.*?<!--/price-->', re.S)
 
