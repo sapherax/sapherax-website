@@ -20,7 +20,6 @@
   - [DINERBOT T11](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t11/) - Servier- und Lieferroboter für enge Gänge, intern auch "Lara" genannt
   - [DINERBOT T9](https://www.sapherax.com/systeme-and-loesungen/dinerbot-t9/)
   - [BUTLERBOT W3](https://www.sapherax.com/systeme-and-loesungen/butlerbot-w3/) - Mehretagenlieferer, intern auch "der Butler" genannt
-  - [KLEENBOT C20](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c20/) - kompakter Reinigungsroboter
   - [KLEENBOT C30](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c30/) - Reinigungsroboter, intern auch "Frieda" genannt
   - [KLEENBOT C40](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c40/) - Reinigungsroboter, intern auch "Ida" genannt
   - [KLEENBOT C55](https://www.sapherax.com/systeme-and-loesungen/kleenbot-c55/) - Reinigungsroboter für mittlere und große Flächen
