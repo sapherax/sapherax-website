@@ -116,7 +116,7 @@ def footer_html(rel):
         '    <div class="footer-col">\n'
         '      <div class="footer-title">Kontakt</div>\n'
         '      <a href="mailto:info@sapherax.com">info@sapherax.com</a>\n'
-        '      <span>Showroom an der A3, Westerwald</span>\n'
+        '      <span>Showroom an der A3 zwischen Köln und Frankfurt</span>\n'
         f'      <a href="{rel}unternehmen/ansprechpartner/index.html">Ansprechpartner</a>\n'
         f'      <a href="{rel}unternehmen/jobs/index.html">Jobs</a>\n'
         f'      <a href="{rel}kontakt/termin/index.html" class="btn btn-primary footer-btn">Beratung anfragen</a>\n'
